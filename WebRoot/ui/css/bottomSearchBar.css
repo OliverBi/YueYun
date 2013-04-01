@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+#bottomSearchBarBack
+{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #690;
+	background-color:#EFEFEF;
+}
+
+#bottomSearchBarContainer
+{
+	height:120px;
+	position:relative;
+}
+
+#bottomSearchBarSearchBarContainer
+{
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+}
+
+#bottomSearchBarLinkContainer
+{
+	left: 0;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    width: 960px;
+	color:#666666;
+}
+
+#bottomSearchBarLinkContainer a
+{
+	color:#666666;
+}
+
+#bottomSearchBarLinkContainer a:hover
+{
+	color:#339900;
+}
+
+#bottomSearchBarTextContainer
+{
+	left: 0;
+    position: absolute;
+    text-align: center;
+    top: 75px;
+    width: 960px;
+	color:#666666;
+}

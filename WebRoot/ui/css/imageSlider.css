@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+#slideShow {
+	width:100%;
+	height:380px;
+	position:relative;
+	background-color:#414141;
+}
+#slideShow #slidesContainer {
+  margin:0 auto;
+  width:800px;
+  height:380px;
+  overflow:auto;
+  position:relative;
+}
+#slideshow #slidesContainer .slide {
+  margin:0 auto;
+  width:780px;
+  height:380px;
+}
+
+#slideBottom
+{
+	background-attachment: scroll;
+    background-image: url("../img/common/commonImage.png");
+    background-position: 0 -195px;
+    background-repeat: repeat-x;
+    height: 28px;
+	width:100%;
+}
+
+.control {
+  display:block;
+  width:62px;
+  height:105px;
+  text-indent:-10000px;
+  position:absolute;
+  cursor: pointer;
+}
+#leftControl {
+	top:133px;
+	left:0;
+	background-color: transparent;
+	background-image: url(../img/common/slider_left.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#leftControl:hover
+{
+	background-image: url(../img/common/slider_left_hover.png);	
+}
+
+#rightControl {
+	top:133px;
+	right:0;
+	background-color: transparent;
+	background-image: url(../img/common/slider_right.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#rightControl:hover
+{
+	background-image: url(../img/common/slider_right_hover.png);	
+}

@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+#topSearchBarBack
+{
+	background-color: #FFF;	
+}
+
+#topSearchBarContainer
+{
+	width: 960px;
+	margin: 0 auto;
+	height:85px;
+}
+
+#topSearchBarLogoContainer
+{
+	background-image: url(../img/topSearchBar/topSearchBarBack.jpg);
+	height:80px;
+	width:120px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: left center;
+	float:left;
+}
+
+#topSearchBarYueYunFontContainer
+{
+	background-image: url(../img/icon/yueyun_font.png);
+	width:120px;
+	height:80px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: left center;
+	float:left;
+}
+
+#topSearchBarSearchBarContainer
+{
+	float:right;
+	margin-top:35px;
+}

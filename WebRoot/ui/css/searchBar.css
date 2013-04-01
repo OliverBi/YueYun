@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+.searchBarContainer
+{
+	width:400px;
+	position:relative;
+}
+
+.searchComboxContainer
+{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:9999;
+}
+
+.searchTextContainer
+{
+	position:absolute;
+	top:0;
+	left:72px;
+}
+
+.searchTextContainer input[type="text"]
+{
+	border-right-style: none;
+	border-left-style: none;
+	height:28px;
+	line-height: 28px;
+	width:210px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #AACB6B;
+	border-bottom-color: #AACB6B;
+	border-radius:0;
+}
+
+.searchButtonContainer
+{
+	position:absolute;
+	top:0;
+	left:282px;
+}
+
+.searchButtonContainer input[type="button"],
+.searchButtonContainer input[type="submit"]
+{
+	background-attachment: scroll;
+	background-image: url(../img/common/commonImage.png);
+	background-repeat: no-repeat;
+	background-position: -285px 0px;
+	height:28px;
+	width:80px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	cursor: pointer;
+}
+
+.comboxDisplayValueContainer
+{
+	width:61px;
+	height:26px;
+	background-attachment: scroll;
+	background-image: url(../img/searchBar/combox_button.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #AACB6B;
+	border-bottom-color: #AACB6B;
+	border-left-color: #AACB6B;
+	line-height: 26px;
+	padding-left: 10px;
+	color: #693;
+	font-size: 14px;
+	font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+	cursor: pointer;
+	background-color: #FFF;
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.comboxDropdownListContainer
+{
+	background-color: #FFF;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #E9E9E9;
+	border-left-color: #E9E9E9;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E9E9E9;
+	position:absolute;
+	left:0;
+	top:28px;
+}
+
+.comboxDropdownItem
+{
+	width:60px;
+	height:26px;
+	line-height: 26px;
+	padding-left: 10px;
+	color: #666;
+	font-size: 14px;
+	font-family: "microsoft yahei", tahoma, simsun, Helvetica, Arial, "sans-serif";
+	cursor: pointer;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #F4F4F4;
+}
+
+.comboxDropdownItem:hover
+{
+	color: #693;
+}

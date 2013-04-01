@@ -1,0 +1,156 @@
+@charset "utf-8";
+/* CSS Document */
+
+#loginPageBack
+{
+	
+}
+
+#loginPageContainer
+{
+	
+}
+
+#loginPageTitle
+{
+	color: #999;
+	font-size: 20px;
+	line-height: 22px;
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+
+#loginFormContainer
+{
+	height:600px;
+	border-radius:5px;
+	width:950px;
+	border: 1px solid #DADADA;
+	background-color: #FFF;
+}
+
+#loginFormTitle
+{
+	border-bottom: 1px solid #DADADA;
+	font-size: 28px;
+	line-height: 75px;
+	text-align: center;
+	color: #333;
+}
+
+#loginFormContent
+{
+	background-image: url(../img/login/loginFormBack.jpg);
+	background-repeat: no-repeat;
+	width:950px;
+	height: 500px;
+	position:relative;
+}
+
+#loginFormContent input[type="text"],  #loginFormContent input[type="password"]
+{
+	width: 195px;
+	line-height:28px;
+	height: 28px;
+	font-size: 14px;
+	color: #669900;
+	font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+
+#loginFormContent label
+{
+	margin-right: 10px;
+}
+
+#loginFormContent input[type="submit"], #loginFormContent input[type="button"]
+{
+	height: 40px;
+	width: 220px;
+	background-attachment: scroll;
+	background-image: url(../img/login/loginButton.png);
+	background-repeat: no-repeat;
+	background-position: 0px -1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top:20px;
+}
+
+#loginFormContent input[type="submit"]:hover, #loginFormContent input[type="button"]:hover
+{
+	background-position: -225px -1px;
+}
+
+#loginFormContent td
+{
+	height:45px;
+	vertical-align: top;
+}
+
+#loginFormLeftContent
+{
+	position:absolute;
+	left:300px;
+	top:100px;
+}
+
+#loginFormRightContent
+{
+	position:absolute;
+	left:650px;
+	top:110px;
+}
+
+#loginFormRightContent .loginFormOptionLinkContainer
+{
+	width: 89px;
+	height:29px;
+	text-align:center;
+	background-attachment: scroll;
+	background-image: url(../img/login/optionButton.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	line-height:29px;
+	margin-bottom:20px;
+}
+
+#loginFormRightContent .loginFormOptionLinkContainer:hover
+{
+	background-attachment: scroll;
+	background-image: url(../img/login/optionButton.png);
+	background-repeat: no-repeat;
+	background-position: 0px -29px;	
+}
+
+.loginFormOptionLinkContainer a
+{
+	color: #999;	
+}
+
+.loginFormOptionLinkContainer a:hover
+{
+	text-decoration: none;
+	color: #669900;
+}
+
+input.error
+{
+	
+}
+
+label.error
+{
+	background-color: #FCC;
+	background-image: url(../img/icon/iconError.png);
+	background-repeat: no-repeat;
+	font-size:12px;
+	padding-left:25px;
+	color:#CC0000;
+	background-position: 3px center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right:5px;
+	line-height:30px;
+}

@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+#topUserBarBack
+{
+	height: 31px;
+	background-attachment: scroll;
+	background-image: url(../img/topUserBar/topUserBarBack.png);
+	background-repeat: repeat;
+	width:100%;
+}
+
+#topUserBarContainer
+{
+	width: 960px;
+	margin: 0 auto;
+}
+
+#topUserBarLogoContainer
+{
+	color: #669933;
+	font-size: 14px;
+	line-height: 31px;
+	float:left;
+}
+
+#topUserBarLogoContainer a,
+#topUserBarLogoContainer a:hover
+{
+	color: #669933;
+	text-decoration:none;
+}
+
+#topUserBarOptContainer
+{
+	float:right;
+}
+
+.topUserBarOpt
+{
+	float:right;
+	line-height:31px;
+	width: 40px;
+}
+
+.topUserBarOpt a
+{
+	color:#666666;
+}

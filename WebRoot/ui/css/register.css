@@ -1,0 +1,460 @@
+@charset "utf-8";
+/* CSS Document */
+#registerPageBack
+{
+	
+}
+
+#registerPageContainer
+{
+	
+}
+
+#registerFormContainer
+{
+	border-radius:5px;
+	width:950px;
+	border: 1px solid #DADADA;
+	background-color: #FFF;
+}
+
+#registerFormFirstStepContainer
+{
+	
+}
+
+#registerFormSecondStepContainer
+{
+	
+}
+
+#registerFormFirstStepContainer .registerFormTitle
+{
+	border-bottom: 1px solid #DADADA;
+	font-size: 28px;
+	line-height: 75px;
+	text-align: center;
+	color: #333;
+}
+
+#registerFormSecondStepContainer .registerFormTitle
+{
+	border-bottom: 1px solid #DADADA;
+	font-size: 28px;
+	line-height: 75px;
+	text-align: center;
+	color: #333;
+}
+
+#registerFormFirstStepContainer .registerFormContent
+{
+	height:327px;
+	background-attachment: scroll;
+	background-image: url(../img/register/registerFormBack.png);
+	background-repeat: no-repeat;
+}
+
+#registerFormSecondStepContainer .registerFormContent
+{
+	height:400px;
+	background-attachment: scroll;
+	background-image: url(../img/register/registerFormBack2.png);
+	background-repeat: no-repeat;
+}
+
+#registerFormFirstStepContainer .registerFormContent input[type="button"],
+#registerFormFirstStepContainer .registerFormContent input[type="submit"]
+{
+	width: 207px;
+	height:50px;
+	background-attachment: scroll;
+	background-image: url(../img/register/registerNextStepButton.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: 1px solid #B7BDBF;
+	border-radius:3px;
+}
+
+#registerFormSecondStepContainer .registerFormContent input[type="button"],
+#registerFormSecondStepContainer .registerFormContent input[type="submit"]
+{
+	width: 207px;
+	height:50px;
+	background-attachment: scroll;
+	background-image: url(../img/register/registerCompleteRegisterButton.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: 1px solid #B7BDBF;
+	border-radius:3px;
+}
+
+#registerFormNextStepButtonContainer
+{
+	width:210px;
+	margin-top: 20;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+#registerFormCompleteRegisterButtonContainer
+{
+	width:210px;
+	margin-top: 20;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+#registerFormFirstStepContainer .registerFormContent input[type="button"]:hover,
+#registerFormFirstStepContainer .registerFormContent input[type="submit"]:hover
+{
+	background-image: url(../img/register/registerNextStepButton.png);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0px -50px;
+}
+
+#registerFormSecondStepContainer .registerFormContent input[type="button"]:hover,
+#registerFormSecondStepContainer .registerFormContent input[type="submit"]:hover
+{
+	background-image: url(../img/register/registerCompleteRegisterButton.png);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0px -50px;
+}
+
+#registerFormFirstInputContainer
+{
+	margin-left:10px;
+	height:200px;
+}
+
+#registerFormSecondInputContainer
+{
+	position:relative;
+	height:290px;
+}
+
+#registerNameContainer
+{
+	background-attachment: scroll;
+	background-image: url(../img/register/registerInputBack.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height: 77px;
+	width: 304px;
+	float:left;
+	margin-right:7px;
+	position:relative;
+}
+
+#registerNameContainer span
+{
+	position:absolute;
+	left:85px;
+	color:#FFF;
+	top:10px;
+}
+
+#registerEmailContainer
+{
+	background-attachment: scroll;
+	background-image: url(../img/register/registerInputBack.png);
+	background-repeat: no-repeat;
+	background-position: -310px 0px;
+	height: 77px;
+	width: 304px;
+	float:left;
+	margin-right:7px;
+	position:relative;
+}
+
+#registerEmailContainer span
+{
+	position:absolute;
+	left:140px;
+	color:#FFF;
+	top:10px;
+}
+
+#registerPasswordContainer
+{
+	background-attachment: scroll;
+	background-image: url(../img/register/registerInputBack.png);
+	background-repeat: no-repeat;
+	background-position: -620px 0px;
+	height: 77px;
+	width: 304px;
+	float:left;
+	margin-right:7px;
+	position:relative;
+}
+
+#registerPasswordContainer span
+{
+	position:absolute;
+	left:80px;
+	color:#FFF;
+	top:10px;
+}
+
+#registerNameErrorContainer, #registerEmailErrorContainer, #registerPasswordErrorContainer
+{
+	width: 304px;
+	height: 100px;
+	float:left;
+	margin-right:7px;
+}
+
+#registerNameContainer input[type="text"], 
+#registerEmailContainer input[type="text"], 
+#registerPasswordContainer input[type="password"]
+{
+	font-size:14px;
+	line-height:17px;
+	position:absolute;
+	left:11px;
+	top:36px;
+	height:29px;
+	width:282px;
+	color:#333333;
+	padding-top: 6px;
+	padding-right: 8px;
+	padding-bottom: 6px;
+	padding-left: 8px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-family: "microsoft yahei", tahoma, simsun, Helvetica, Arial, "sans-serif";
+	font-weight: bold;
+}
+
+#registerNameErrorContainer div.error,
+#registerEmailErrorContainer div.error,
+#registerPasswordErrorContainer div.error
+{
+	background-image: url(../img/icon/iconError2.png);
+	background-repeat: no-repeat;
+	width:230px;
+	height:60px;
+	font-weight: bold;
+	color: #CC0000;
+	padding-left:50px;
+	padding-top:15px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #CC0000;
+	border-right-color: #CC0000;
+	border-left-color: #CC0000;
+	border-radius:5px 5px 0 0;
+	background-position: 10px 5px;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+
+#registerBirthdayErrorContainer div.error
+{
+	background-image: url(../img/icon/iconError2.png);
+	background-repeat: no-repeat;
+	width:230px;
+	height:60px;
+	font-weight: bold;
+	color: #CC0000;
+	padding-left:50px;
+	padding-top:15px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #CC0000;
+	border-right-color: #CC0000;
+	border-left-color: #CC0000;
+	border-radius:5px 5px 0 0;
+	background-position: 10px 5px;
+	margin-left:20px;
+}
+
+#registerVCodeErrorContainer
+{
+	position:absolute;
+	left:322px;
+	top:13px;
+}
+
+#registerVCodeErrorContainer div.error
+{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #CC0000;
+	border-right-color: #CC0000;
+	border-bottom-color: #CC0000;
+	border-left-color: #CC0000;
+	width:90px;
+	height:30px;
+	font-weight: bold;
+	color: #CC0000;
+	line-height:30px;
+	padding-left:10px;
+	background-color: #FFFDEC;
+}
+
+#registerGenderContainer
+{
+	background-color: #FFFDEC;
+	border: 1px solid #D8D5BE;
+	width:180px;
+	height:100px;
+	border-radius:3px;
+}
+
+#registerBirthdayContainer
+{
+	background-color: #FFFDEC;
+	border: 1px solid #D8D5BE;
+	width:300px;
+	padding-left:20px;
+	padding-top:10px;
+	padding-bottom:15px;
+	border-radius:3px;
+}
+
+#registerVCodeContainer
+{
+	background-color: #FFFDEC;
+	border: 1px solid #D8D5BE;
+	width:300px;
+	padding-left:20px;
+	height:40px;
+	border-radius:3px;
+	padding-top: 15px;
+}
+
+#registerVCodeContainer div
+{
+	float:left;
+	height:40px;
+}
+
+#registerMaleContainer .registerMaleImg
+{
+	height: 55px;
+	width: 67px;
+	background-image: url(../img/register/registerImage.png);
+	background-position: -430px -195px;
+	border-radius:3px;
+	margin-left: 12px;
+	margin-top: 12px;
+	margin-bottom:5px;
+}
+
+#registerFemaleContainer .registerFemaleImg
+{
+	height: 55px;
+	width: 67px;
+	background-image: url(../img/register/registerImage.png);
+	background-position: -570px -195px;
+	border-radius:3px;
+	margin-top: 12px;
+	margin-left: 12px;
+	margin-bottom:5px;
+}
+
+#registerMaleContainer, #registerFemaleContainer
+{
+	width:90px;
+	float:left;
+	height:100px;
+}
+
+#registerMaleContainer .registerRadioImg,
+#registerFemaleContainer .registerRadioImg
+{
+	background-image: url(../img/register/registerImage.png);
+	background-position: -130px -120px;
+	height: 14px;
+	width:14px;
+	float:left;
+	margin-left:12px;
+}
+
+#registerMaleContainer .registerRadioImgSelect,
+#registerFemaleContainer .registerRadioImgSelect
+{
+	background-image: url(../img/register/registerImage.png);
+	background-position: -130px -135px;
+	height: 14px;
+	width:14px;
+	float:left;
+	margin-left:12px;
+}
+
+#registerMaleContainer .registerRadioText,
+#registerFemaleContainer .registerRadioText
+{
+	float:left;
+	margin-left:5px;
+}
+
+#registerGenderErrorContainer
+{
+	height:100px;
+	width:180px;
+}
+
+#registerBirthdayErrorContainer
+{
+	height:75px;
+	width:300px;
+}
+
+#registerGenderContainer input
+{
+	
+}
+
+#registerBirthdayContainer input
+{
+	width:200px;
+	height:30px;
+	line-height:30px;
+	font-family: "microsoft yahei", tahoma, simsun, Helvetica, Arial, "sans-serif";
+	font-size:14px;
+	font-weight: bold;
+	margin-top:3px;
+}
+
+#registerVCodeContainer input
+{
+	width:100px;
+	height:24px;
+	line-height:24px;
+	font-family: "microsoft yahei", tahoma, simsun, Helvetica, Arial, "sans-serif";
+	font-size:14px;
+	font-weight: bold;
+	margin-left:5px;
+}
+
+#registerVCodeContainer img
+{
+	width:90px;
+	height:30px;
+	margin-left:10px;
+}
+
+#registerVCodeContainer span
+{
+}

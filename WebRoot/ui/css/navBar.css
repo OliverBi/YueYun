@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+#navBarBack
+{
+	height:28px;
+	background-attachment: scroll;
+	background-image: url(../img/common/commonImage.png);
+	background-repeat: repeat-x;
+	background-position: 0px -195px;
+}
+
+#navBarContainer
+{
+	height:28px;
+}
