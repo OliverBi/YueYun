@@ -32,9 +32,10 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/yueyun/dao/TbUser.hbm.xml</value>
+				<value>com/yueyun/dao/TbTrack.hbm.xml</value>
 				<value>com/yueyun/dao/TbArtist.hbm.xml</value>
 				<value>com/yueyun/dao/TbAlbum.hbm.xml</value>
-				<value>com/yueyun/dao/TbTrack.hbm.xml</value></list>
+				<value>com/yueyun/dao/TbArtistlist.hbm.xml</value></list>
 		</property>
 	</bean>
 	<bean id="transactionManager" 
@@ -74,18 +75,29 @@
 			<ref bean="TbUserDAO" />
 		</property>
 	</bean>
+	<!-- Action Declare -->
 	<bean id="UserLoginAction" class="com.yueyun.action.UserLoginAction">
 		<property name="tbUserService">
 			<ref bean="TbUserService" />
 		</property>
+	</bean>
+	<bean id="UserLogoutAction" class="com.yueyun.action.UserLogoutAction">
+		
 	</bean>
 	<bean id="UserRegisterAction" class="com.yueyun.action.UserRegisterAction">
 		<property name="tbUserService">
 			<ref bean="TbUserService" />
 		</property>
 	</bean>
+	<bean id="UserHomeAction" class="com.yueyun.action.UserHomeAction">
+	</bean>
 	<bean id="VerifyCodeImageAction" class="com.yueyun.action.VerifyCodeImageAction">
 		
+	</bean>
+	<bean id="TbTrackDAO" class="com.yueyun.dao.TbTrackDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
 	</bean>
 	<bean id="TbArtistDAO" class="com.yueyun.dao.TbArtistDAO">
 		<property name="sessionFactory">
@@ -97,7 +109,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="TbTrackDAO" class="com.yueyun.dao.TbTrackDAO">
+	<bean id="TbArtistlistDAO" class="com.yueyun.dao.TbArtistlistDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

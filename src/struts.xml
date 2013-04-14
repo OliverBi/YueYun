@@ -16,6 +16,17 @@
 			<result type="json"></result>
 		</action>
 	</package>
+	
+	<package name="userPackage" extends="struts-default" namespace="/user">
+		<action name="userCheckAction" class="UserHomeAction" method="userLoginCheck">
+			<result name="success">/ui/page/user/home.jsp</result>
+			<result name="login">/ui/page/user/login.jsp</result>
+		</action>
+		<action name="userLogoutAction" class="UserLogoutAction">
+			<result>/ui/page/public/index.jsp</result>
+		</action>
+	</package>
+	
 	<package name="toolPackage" extends="struts-default" namespace="/tool">
 		<action name="verifyCodeAction" class="VerifyCodeImageAction">
 			<result name="success" type="stream">

@@ -14,3 +14,68 @@
 {
 	height:28px;
 }
+
+.navBarItemContainer
+{
+	width:70px;
+	height:28px;
+	float:left;
+	color: #FFF;
+	line-height:28px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.navBarItemContainer:hover
+{
+	background-image: url(../img/common/commonImage.png);
+	background-attachment: scroll;
+	background-position: 0px -223px;
+	color: #CF6;
+	font-weight:bold;
+}
+
+.navBarItemContainerOn
+{
+	background-image: url(../img/common/commonImage.png);
+	background-attachment: scroll;
+	background-position: 0px -223px;
+	color: #CF6;
+	width:70px;
+	height:28px;
+	float:left;
+	line-height:28px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.navBarItemContainerOn a,
+.navBarItemContainerOn a:hover
+{
+	text-decoration:none;
+	color: #CF6;
+}
+
+.navBarItemContainer a
+{
+	color: #FFF;
+}
+
+.navBarItemContainer a:hover
+{
+	text-decoration:none;
+	color: #FFF;
+}
+
+.navBarItemContainer:hover a
+{
+	color: #CF6;
+}
+
+.navBarItemContainer:hover a:hover
+{
+	text-decoration:none;
+	color: #CF6;
+}

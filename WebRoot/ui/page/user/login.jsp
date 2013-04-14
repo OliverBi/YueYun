@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
@@ -15,8 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	
-   	<link type="text/css" href="ui/css/common.css" rel="stylesheet">
-   	<link type="text/css" href="ui/css/login.css" rel="stylesheet">
+   	<link type="text/css" href="ui/css/common.css" rel="stylesheet"/>
+   	<link type="text/css" href="ui/css/login.css" rel="stylesheet"/>
    	<link rel="icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
     <link rel="Shortcut Icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
    	
@@ -119,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			     </div>
 			     <div id="loginFormRightContent">
 			     	<div class="loginFormOptionLinkContainer">
-			     		<a href=""><s:text name="newUserRegister"/></a>
+			     		<a href="ui/page/user/register.jsp"><s:text name="newUserRegister"/></a>
 			     	</div>
 			     	<div class="loginFormOptionLinkContainer">
 			     		<a href=""><s:text name="forgetPassword"/></a>

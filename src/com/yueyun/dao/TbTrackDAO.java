@@ -25,8 +25,12 @@ public class TbTrackDAO extends HibernateDaoSupport {
 	public static final String TRACK_NAME = "trackName";
 	public static final String TRACK_DURATION = "trackDuration";
 	public static final String TRACK_URL = "trackUrl";
-	public static final String PLAY_COUNT = "playCount";
-	public static final String LISTENERS = "listeners";
+	public static final String TRACK_PLAY_COUNT = "trackPlayCount";
+	public static final String TRACK_LISTENERS = "trackListeners";
+	public static final String TRACK_ALBUM_ID = "trackAlbumId";
+	public static final String TRACK_IMG_SMALL = "trackImgSmall";
+	public static final String TRACK_IMG_MEDIUM = "trackImgMedium";
+	public static final String TRACK_IMG_LARGE = "trackImgLarge";
 
 	protected void initDao() {
 		// do nothing
@@ -54,7 +58,7 @@ public class TbTrackDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public TbTrack findById(java.lang.String id) {
+	public TbTrack findById(java.lang.Integer id) {
 		log.debug("getting TbTrack instance with id: " + id);
 		try {
 			TbTrack instance = (TbTrack) getHibernateTemplate().get(
@@ -104,12 +108,28 @@ public class TbTrackDAO extends HibernateDaoSupport {
 		return findByProperty(TRACK_URL, trackUrl);
 	}
 
-	public List findByPlayCount(Object playCount) {
-		return findByProperty(PLAY_COUNT, playCount);
+	public List findByTrackPlayCount(Object trackPlayCount) {
+		return findByProperty(TRACK_PLAY_COUNT, trackPlayCount);
 	}
 
-	public List findByListeners(Object listeners) {
-		return findByProperty(LISTENERS, listeners);
+	public List findByTrackListeners(Object trackListeners) {
+		return findByProperty(TRACK_LISTENERS, trackListeners);
+	}
+
+	public List findByTrackAlbumId(Object trackAlbumId) {
+		return findByProperty(TRACK_ALBUM_ID, trackAlbumId);
+	}
+
+	public List findByTrackImgSmall(Object trackImgSmall) {
+		return findByProperty(TRACK_IMG_SMALL, trackImgSmall);
+	}
+
+	public List findByTrackImgMedium(Object trackImgMedium) {
+		return findByProperty(TRACK_IMG_MEDIUM, trackImgMedium);
+	}
+
+	public List findByTrackImgLarge(Object trackImgLarge) {
+		return findByProperty(TRACK_IMG_LARGE, trackImgLarge);
 	}
 
 	public List findAll() {

@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* CSS Document */
+
+#homePageBack
+{
+	background-color: #B3DF89;
+	background-attachment: scroll;
+	background-image: url(../img/home/body_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
+#homePageContainer
+{
+	min-height:1000px;
+}
+
+#homePageHeaderContainer
+{
+	position:relative;
+	height:300px;
+	background-color:#FFF;
+}
+
+#homePageHeaderContainer #homePageMenuContainer
+{
+	height:30px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D8D8D8;
+	background-color:#FFF;
+}
+
+.homePageMenuItems
+{
+	list-style:none;
+	margin-left:250px;	
+}
+
+.homePageMenuItem
+{
+	float:left;
+	width:72px;
+	height:27px;
+	background-color: #F1F1F1;
+	text-align:center;
+	line-height:27px;
+	margin-right:5px;
+	margin-top:3px;
+	border-radius:3px 3px 0 0;
+}
+
+.homePageMenuItem:hover
+{
+	background-color: #6FA736;
+}
+
+.homePageMenuItem:hover a
+{
+	color:#FFFFFF;
+}
+
+.homePageMenuItem a
+{
+	color:#666666;
+}
+
+.homePageMenuItem a:hover
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.homePageMenuItemOn
+{
+	float:left;
+	width:70px;
+	height:27px;
+	background-color: #FFFFFF;
+	text-align:center;
+	line-height:27px;
+	margin-right:5px;
+	margin-top:2px;
+	border-radius:3px 3px 0 0;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #6FA736;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #D8D8D8;
+	border-left-color: #D8D8D8;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+}
+
+.homePageMenuItemOn a
+{
+	color:#000000;
+}
+
+.homePageMenuItemOn a:hover
+{
+	text-decoration:none;
+}
+
+#homePageHeaderContainer #homePageAvatarContainer
+{
+	position:absolute;
+	left:0;
+	top:-100px;
+	width:198px;
+	height:198px;
+	background-image: url(../img/home/avatar_bg.png);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.homePageAvatar
+{
+	margin:7px;
+}
+
+.homePageAvatar img
+{
+	width:184px;
+	height:184px;
+}
+
+#homePageUserInfoContainer
+{
+	position:absolute;
+	left:0;
+	top:110px;
+}
+
+#homePageUserInfoContainer .homePageUserNameContainer
+{
+	margin-left:20px;
+	font-size:14px;
+	font-weight:bold;
+	color: #6FA736;
+}
+
+#homePageUserInfoContainer .homePageUserSocialContainer
+{
+	margin-left:20px;
+	margin-top:5px;
+}
+
+.homePageUserSocialContainer ul
+{
+	list-style:none;
+}
+
+.homePageUserSocialContainer li
+{
+	float:left;
+	margin-right:5px;
+	color:#666666;
+}
+
+.homePageUserSocialContainer li a
+{
+	color: #6FA736;
+}
+
+.homePageUserSocialContainer span
+{
+	display:block;
+}
+
+#homePageContentContainer
+{
+	
+}

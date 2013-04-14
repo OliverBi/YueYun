@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
     	$(document).ready(function(){
     		var currentPosition = 0;
-    		var slideWidth = 800;
+    		var slideWidth = 700;
     		var slides = $(".slide");
     		var numberOfSlides = slides.length;
     		$("#slidesContainer").css("overflow","hidden");
@@ -65,6 +65,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</div>
     		<div class="slide">
     			<img src="ui/img/test/img3.jpg" />
+    		</div>
+    		<div class="slide">
+    			<img src="ui/img/test/img4.jpg" />
     		</div>
     	</div>
     </div>

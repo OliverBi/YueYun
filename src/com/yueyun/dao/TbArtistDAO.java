@@ -1,7 +1,6 @@
 package com.yueyun.dao;
 
 import java.util.List;
-import java.util.Set;
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +27,7 @@ public class TbArtistDAO extends HibernateDaoSupport {
 	public static final String ARTIST_IMG_SMALL = "artistImgSmall";
 	public static final String ARTIST_IMG_MEDIUM = "artistImgMedium";
 	public static final String ARTIST_IMG_LARGE = "artistImgLarge";
+	public static final String ARTIST_DESCRIPTION = "artistDescription";
 
 	protected void initDao() {
 		// do nothing
@@ -55,7 +55,7 @@ public class TbArtistDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public TbArtist findById(java.lang.String id) {
+	public TbArtist findById(java.lang.Integer id) {
 		log.debug("getting TbArtist instance with id: " + id);
 		try {
 			TbArtist instance = (TbArtist) getHibernateTemplate().get(
@@ -107,6 +107,10 @@ public class TbArtistDAO extends HibernateDaoSupport {
 
 	public List findByArtistImgLarge(Object artistImgLarge) {
 		return findByProperty(ARTIST_IMG_LARGE, artistImgLarge);
+	}
+
+	public List findByArtistDescription(Object artistDescription) {
+		return findByProperty(ARTIST_DESCRIPTION, artistDescription);
 	}
 
 	public List findAll() {

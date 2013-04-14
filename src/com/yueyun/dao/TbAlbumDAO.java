@@ -2,7 +2,6 @@ package com.yueyun.dao;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Set;
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +54,7 @@ public class TbAlbumDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public TbAlbum findById(java.lang.String id) {
+	public TbAlbum findById(java.lang.Integer id) {
 		log.debug("getting TbAlbum instance with id: " + id);
 		try {
 			TbAlbum instance = (TbAlbum) getHibernateTemplate().get(

@@ -14,9 +14,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
     
-    <link type="text/css" href="ui/css/common.css" rel="stylesheet">
-    <link type="text/css" href="ui/css/register.css" rel="stylesheet">
-    <link type="text/css" href="ui/css/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+    <link type="text/css" href="ui/css/common.css" rel="stylesheet"/>
+    <link type="text/css" href="ui/css/register.css" rel="stylesheet"/>
+    <link type="text/css" href="ui/css/jquery-ui-1.10.2.custom.css" rel="stylesheet"/>
     <link rel="icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
     <link rel="Shortcut Icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
     

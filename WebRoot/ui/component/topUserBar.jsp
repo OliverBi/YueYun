@@ -20,12 +20,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</a>
     		</div>
     		<div id="topUserBarOptContainer">
-    			<div class="topUserBarOpt">
-    				<a href="ui/page/user/register.jsp"><s:text name="register" /></a>
-    			</div>
-    			<div class="topUserBarOpt">
-    				<a href="ui/page/user/login.jsp"><s:text name="login" /></a>
-    			</div>
+    			<s:if test="%{#session.SESSION_USER_EMAIL!=null}">
+    				<div class="topUserBarOpt">
+    					<a href="user/userLogoutAction"><s:text name="logout" /></a>
+    				</div>
+    			</s:if>
+    			<s:else>
+    				<div class="topUserBarOpt">
+    					<a href="ui/page/user/register.jsp"><s:text name="register" /></a>
+    				</div>
+    				<div class="topUserBarOpt">
+    					<a href="ui/page/user/login.jsp"><s:text name="login" /></a>
+    				</div>
+    			</s:else>
     		</div>
     	</div>
     </div>

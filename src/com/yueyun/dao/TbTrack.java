@@ -8,14 +8,16 @@ public class TbTrack implements java.io.Serializable {
 
 	// Fields
 
-	private String trackId;
-	private TbArtist tbArtist;
-	private TbAlbum tbAlbum;
+	private Integer trackId;
 	private String trackName;
 	private Integer trackDuration;
 	private String trackUrl;
-	private Integer playCount;
-	private Integer listeners;
+	private Integer trackPlayCount;
+	private Integer trackListeners;
+	private Integer trackAlbumId;
+	private String trackImgSmall;
+	private String trackImgMedium;
+	private String trackImgLarge;
 
 	// Constructors
 
@@ -24,52 +26,34 @@ public class TbTrack implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public TbTrack(String trackId, String trackName, Integer playCount,
-			Integer listeners) {
-		this.trackId = trackId;
+	public TbTrack(String trackName) {
 		this.trackName = trackName;
-		this.playCount = playCount;
-		this.listeners = listeners;
 	}
 
 	/** full constructor */
-	public TbTrack(String trackId, TbArtist tbArtist, TbAlbum tbAlbum,
-			String trackName, Integer trackDuration, String trackUrl,
-			Integer playCount, Integer listeners) {
-		this.trackId = trackId;
-		this.tbArtist = tbArtist;
-		this.tbAlbum = tbAlbum;
+	public TbTrack(String trackName, Integer trackDuration, String trackUrl,
+			Integer trackPlayCount, Integer trackListeners,
+			Integer trackAlbumId, String trackImgSmall, String trackImgMedium,
+			String trackImgLarge) {
 		this.trackName = trackName;
 		this.trackDuration = trackDuration;
 		this.trackUrl = trackUrl;
-		this.playCount = playCount;
-		this.listeners = listeners;
+		this.trackPlayCount = trackPlayCount;
+		this.trackListeners = trackListeners;
+		this.trackAlbumId = trackAlbumId;
+		this.trackImgSmall = trackImgSmall;
+		this.trackImgMedium = trackImgMedium;
+		this.trackImgLarge = trackImgLarge;
 	}
 
 	// Property accessors
 
-	public String getTrackId() {
+	public Integer getTrackId() {
 		return this.trackId;
 	}
 
-	public void setTrackId(String trackId) {
+	public void setTrackId(Integer trackId) {
 		this.trackId = trackId;
-	}
-
-	public TbArtist getTbArtist() {
-		return this.tbArtist;
-	}
-
-	public void setTbArtist(TbArtist tbArtist) {
-		this.tbArtist = tbArtist;
-	}
-
-	public TbAlbum getTbAlbum() {
-		return this.tbAlbum;
-	}
-
-	public void setTbAlbum(TbAlbum tbAlbum) {
-		this.tbAlbum = tbAlbum;
 	}
 
 	public String getTrackName() {
@@ -96,20 +80,52 @@ public class TbTrack implements java.io.Serializable {
 		this.trackUrl = trackUrl;
 	}
 
-	public Integer getPlayCount() {
-		return this.playCount;
+	public Integer getTrackPlayCount() {
+		return this.trackPlayCount;
 	}
 
-	public void setPlayCount(Integer playCount) {
-		this.playCount = playCount;
+	public void setTrackPlayCount(Integer trackPlayCount) {
+		this.trackPlayCount = trackPlayCount;
 	}
 
-	public Integer getListeners() {
-		return this.listeners;
+	public Integer getTrackListeners() {
+		return this.trackListeners;
 	}
 
-	public void setListeners(Integer listeners) {
-		this.listeners = listeners;
+	public void setTrackListeners(Integer trackListeners) {
+		this.trackListeners = trackListeners;
+	}
+
+	public Integer getTrackAlbumId() {
+		return this.trackAlbumId;
+	}
+
+	public void setTrackAlbumId(Integer trackAlbumId) {
+		this.trackAlbumId = trackAlbumId;
+	}
+
+	public String getTrackImgSmall() {
+		return this.trackImgSmall;
+	}
+
+	public void setTrackImgSmall(String trackImgSmall) {
+		this.trackImgSmall = trackImgSmall;
+	}
+
+	public String getTrackImgMedium() {
+		return this.trackImgMedium;
+	}
+
+	public void setTrackImgMedium(String trackImgMedium) {
+		this.trackImgMedium = trackImgMedium;
+	}
+
+	public String getTrackImgLarge() {
+		return this.trackImgLarge;
+	}
+
+	public void setTrackImgLarge(String trackImgLarge) {
+		this.trackImgLarge = trackImgLarge;
 	}
 
 }

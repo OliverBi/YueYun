@@ -6,9 +6,9 @@
 -->
 <hibernate-mapping>
     <class name="com.yueyun.dao.TbArtist" table="tb_artist" catalog="yueyun">
-        <id name="artistId" type="java.lang.String">
-            <column name="artistId" length="128" />
-            <generator class="assigned" />
+        <id name="artistId" type="java.lang.Integer">
+            <column name="artistId" />
+            <generator class="identity" />
         </id>
         <property name="artistName" type="java.lang.String">
             <column name="artistName" length="128" not-null="true" />
@@ -22,11 +22,8 @@
         <property name="artistImgLarge" type="java.lang.String">
             <column name="artistImgLarge" length="128" />
         </property>
-        <set name="tbTracks" inverse="true">
-            <key>
-                <column name="artistId" length="128" />
-            </key>
-            <one-to-many class="com.yueyun.dao.TbTrack" />
-        </set>
+        <property name="artistDescription" type="java.lang.String">
+            <column name="artistDescription" />
+        </property>
     </class>
 </hibernate-mapping>

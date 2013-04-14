@@ -6,16 +6,10 @@
 -->
 <hibernate-mapping>
     <class name="com.yueyun.dao.TbTrack" table="tb_track" catalog="yueyun">
-        <id name="trackId" type="java.lang.String">
-            <column name="trackId" length="128" />
-            <generator class="assigned" />
+        <id name="trackId" type="java.lang.Integer">
+            <column name="trackId" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="tbArtist" class="com.yueyun.dao.TbArtist" fetch="select">
-            <column name="artistId" length="128" />
-        </many-to-one>
-        <many-to-one name="tbAlbum" class="com.yueyun.dao.TbAlbum" fetch="select">
-            <column name="albumId" length="128" />
-        </many-to-one>
         <property name="trackName" type="java.lang.String">
             <column name="trackName" length="128" not-null="true" />
         </property>
@@ -25,11 +19,23 @@
         <property name="trackUrl" type="java.lang.String">
             <column name="trackUrl" />
         </property>
-        <property name="playCount" type="java.lang.Integer">
-            <column name="playCount" not-null="true" />
+        <property name="trackPlayCount" type="java.lang.Integer">
+            <column name="trackPlayCount" />
         </property>
-        <property name="listeners" type="java.lang.Integer">
-            <column name="listeners" not-null="true" />
+        <property name="trackListeners" type="java.lang.Integer">
+            <column name="trackListeners" />
+        </property>
+        <property name="trackAlbumId" type="java.lang.Integer">
+            <column name="trackAlbumId" />
+        </property>
+        <property name="trackImgSmall" type="java.lang.String">
+            <column name="trackImgSmall" length="128" />
+        </property>
+        <property name="trackImgMedium" type="java.lang.String">
+            <column name="trackImgMedium" length="128" />
+        </property>
+        <property name="trackImgLarge" type="java.lang.String">
+            <column name="trackImgLarge" length="128" />
         </property>
     </class>
 </hibernate-mapping>

@@ -3,21 +3,21 @@
 
 #slideShow {
 	width:100%;
-	height:380px;
+	height:320px;
 	position:relative;
 	background-color:#414141;
 }
 #slideShow #slidesContainer {
   margin:0 auto;
-  width:800px;
-  height:380px;
+  width:700px;
+  height:320px;
   overflow:auto;
   position:relative;
 }
 #slideshow #slidesContainer .slide {
   margin:0 auto;
-  width:780px;
-  height:380px;
+  width:680px;
+  height:320px;
 }
 
 #slideBottom
@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 #leftControl {
-	top:133px;
+	top:110px;
 	left:0;
 	background-color: transparent;
 	background-image: url(../img/common/slider_left.png);
@@ -53,7 +53,7 @@
 }
 
 #rightControl {
-	top:133px;
+	top:110px;
 	right:0;
 	background-color: transparent;
 	background-image: url(../img/common/slider_right.png);

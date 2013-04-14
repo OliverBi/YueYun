@@ -1,8 +1,5 @@
 package com.yueyun.dao;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * TbArtist entity. @author MyEclipse Persistence Tools
  */
@@ -11,12 +8,12 @@ public class TbArtist implements java.io.Serializable {
 
 	// Fields
 
-	private String artistId;
+	private Integer artistId;
 	private String artistName;
 	private String artistImgSmall;
 	private String artistImgMedium;
 	private String artistImgLarge;
-	private Set tbTracks = new HashSet(0);
+	private String artistDescription;
 
 	// Constructors
 
@@ -25,29 +22,28 @@ public class TbArtist implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public TbArtist(String artistId, String artistName) {
-		this.artistId = artistId;
+	public TbArtist(String artistName) {
 		this.artistName = artistName;
 	}
 
 	/** full constructor */
-	public TbArtist(String artistId, String artistName, String artistImgSmall,
-			String artistImgMedium, String artistImgLarge, Set tbTracks) {
-		this.artistId = artistId;
+	public TbArtist(String artistName, String artistImgSmall,
+			String artistImgMedium, String artistImgLarge,
+			String artistDescription) {
 		this.artistName = artistName;
 		this.artistImgSmall = artistImgSmall;
 		this.artistImgMedium = artistImgMedium;
 		this.artistImgLarge = artistImgLarge;
-		this.tbTracks = tbTracks;
+		this.artistDescription = artistDescription;
 	}
 
 	// Property accessors
 
-	public String getArtistId() {
+	public Integer getArtistId() {
 		return this.artistId;
 	}
 
-	public void setArtistId(String artistId) {
+	public void setArtistId(Integer artistId) {
 		this.artistId = artistId;
 	}
 
@@ -83,12 +79,12 @@ public class TbArtist implements java.io.Serializable {
 		this.artistImgLarge = artistImgLarge;
 	}
 
-	public Set getTbTracks() {
-		return this.tbTracks;
+	public String getArtistDescription() {
+		return this.artistDescription;
 	}
 
-	public void setTbTracks(Set tbTracks) {
-		this.tbTracks = tbTracks;
+	public void setArtistDescription(String artistDescription) {
+		this.artistDescription = artistDescription;
 	}
 
 }

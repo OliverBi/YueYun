@@ -1,8 +1,6 @@
 package com.yueyun.dao;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * TbAlbum entity. @author MyEclipse Persistence Tools
@@ -12,13 +10,12 @@ public class TbAlbum implements java.io.Serializable {
 
 	// Fields
 
-	private String albumId;
+	private Integer albumId;
 	private String albumName;
 	private String albumImgSmall;
 	private String albumImgMedium;
 	private String albumImgLarge;
-	private Timestamp releaseDate;
-	private Set tbTracks = new HashSet(0);
+	private Timestamp albumReleaseDate;
 
 	// Constructors
 
@@ -27,31 +24,28 @@ public class TbAlbum implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public TbAlbum(String albumId, String albumName) {
-		this.albumId = albumId;
+	public TbAlbum(String albumName) {
 		this.albumName = albumName;
 	}
 
 	/** full constructor */
-	public TbAlbum(String albumId, String albumName, String albumImgSmall,
-			String albumImgMedium, String albumImgLarge, Timestamp releaseDate,
-			Set tbTracks) {
-		this.albumId = albumId;
+	public TbAlbum(String albumName, String albumImgSmall,
+			String albumImgMedium, String albumImgLarge,
+			Timestamp albumReleaseDate) {
 		this.albumName = albumName;
 		this.albumImgSmall = albumImgSmall;
 		this.albumImgMedium = albumImgMedium;
 		this.albumImgLarge = albumImgLarge;
-		this.releaseDate = releaseDate;
-		this.tbTracks = tbTracks;
+		this.albumReleaseDate = albumReleaseDate;
 	}
 
 	// Property accessors
 
-	public String getAlbumId() {
+	public Integer getAlbumId() {
 		return this.albumId;
 	}
 
-	public void setAlbumId(String albumId) {
+	public void setAlbumId(Integer albumId) {
 		this.albumId = albumId;
 	}
 
@@ -87,20 +81,12 @@ public class TbAlbum implements java.io.Serializable {
 		this.albumImgLarge = albumImgLarge;
 	}
 
-	public Timestamp getReleaseDate() {
-		return this.releaseDate;
+	public Timestamp getAlbumReleaseDate() {
+		return this.albumReleaseDate;
 	}
 
-	public void setReleaseDate(Timestamp releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-
-	public Set getTbTracks() {
-		return this.tbTracks;
-	}
-
-	public void setTbTracks(Set tbTracks) {
-		this.tbTracks = tbTracks;
+	public void setAlbumReleaseDate(Timestamp albumReleaseDate) {
+		this.albumReleaseDate = albumReleaseDate;
 	}
 
 }
