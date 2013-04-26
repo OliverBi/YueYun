@@ -41,7 +41,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					<div class="title"></div>
    					<div class="newAlbumListContainer">
    						<ul class="newAlbumList">
-	   						<!--Example-->
+   							<s:iterator value="newAlbumList" id="newAlbumItem">
+   								<li class="newAlbumListItem">
+	   								<a href="public/album?album.albumId=<s:property value='albumId'/>">
+	   									<img src="<s:property value='albumImgList[2].imageUrl'/>"/>
+	   									<span class="albumName"><s:property value="albumName"/></span>
+	   									<span class="artistName"><s:property value="albumArtist.artistName"/></span>
+	   								</a>
+	   							</li>
+   							</s:iterator>
+	   						<%-- Example
 	   						<li class="newAlbumListItem">
 	   							<a href="#">
 	   								<img src="ui/img/test/newAlbum/img1.jpg" />
@@ -49,78 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   								<span class="artistName">华语群星</span>
 	   							</a>
 	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img2.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img3.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img4.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img5.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img6.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img7.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img8.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img9.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
-	   						<!--Example-->
-	   						<li class="newAlbumListItem">
-	   							<a href="#">
-	   								<img src="ui/img/test/newAlbum/img10.jpg" />
-	   								<span class="albumName">继续宠爱十年</span>
-	   								<span class="artistName">华语群星</span>
-	   							</a>
-	   						</li>
+	   						--%>
 	   					</ul>
    					</div>
    				</div>
@@ -129,7 +67,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   					<div class="title"></div>
 	   					<div class="recommendTrackListContainer">
 	   						<ul class="recommendTrackList">
-	   							<!--Example-->
+	   							<s:iterator value="newRecTrackList" id="newRecTrack">
+		   							<li class="recommendTrackItem">
+		   								<a href="public/track?track.trackId=<s:property value='trackId'/>">
+		   									<span class="trackName"><s:property value="trackName"/></span>
+		   								</a>
+		   								<a href="public/artist?artist.artistId=<s:property value='trackArtistList[0].artistId'/>">
+		   									<span class="artistName">&nbsp;-&nbsp;<s:property value="trackArtistString"/></span>
+		   								</a>
+		   								<span class="date"><s:date name="trackAlbum.albumReleaseDate" format="yyyy-MM-dd"/></span>
+		   							</li>
+	   							</s:iterator>
+	   							<%-- Example
 	   							<li class="recommendTrackItem">
 	   								<a href="#">
 	   									<span class="trackName">流浪记</span>
@@ -138,97 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
 	   								</a>
 	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">2013-03-31</span>
-	   							</li>
+	   							</li> --%>
 	   						</ul>
 	   					</div>
 	   				</div>
@@ -236,7 +95,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   					<div class="title"></div>
 	   					<div class="recommendTrackListContainer">
 	   						<ul class="recommendTrackList">
-	   							<!--Example-->
+	   							<s:iterator value="hotRecTrackList" id="hotRecTrack">
+	   								<li class="recommendTrackItem">
+		   								<a href="public/track?track.trackId=<s:property value='trackId'/>">
+		   									<span class="trackName"><s:property value="trackName"/></span>
+		   								</a>
+		   								<a href="public/artist?artist.artistId=<s:property value='trackArtistList[0].artistId'/>">
+		   									<span class="artistName">&nbsp;-&nbsp;<s:property value="trackArtistString"/></span>
+		   								</a>
+		   								<span class="count"><s:property value="trackPlayCount"/></span>
+	   								</li>
+	   							</s:iterator>
+	   							<%-- Example
 	   							<li class="recommendTrackItem">
 	   								<a href="#">
 	   									<span class="trackName">流浪记</span>
@@ -245,97 +115,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
 	   								</a>
 	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
-	   							<!--Example-->
-	   							<li class="recommendTrackItem">
-	   								<a href="#">
-	   									<span class="trackName">流浪记</span>
-	   								</a>
-	   								<a href="#">
-	   									<span class="artistName">&nbsp;-&nbsp;杨宗纬</span>
-	   								</a>
-	   								<span class="count">123123</span>
-	   							</li>
+	   							</li> --%>
 	   						</ul>
 	   					</div>
 	   				</div>
@@ -389,7 +169,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   				<div class="title"></div>
 	   				<div class="chartItemsContainer">
 	   					<ol class="chartItems">
-	   						<!--Example-->
+	   						<s:iterator value="trackRankList" id="trackRank" status="st">
+	   							<s:if test="#st.first">
+	   								<li class="firstChartItem">
+			   							<span class="rank">0<s:property value="#st.index+1"/></span>
+			   							<a href="public/track?track.trackId=<s:property value='trackId'/>">
+			   								<span class="trackName"><s:property value="trackName"/></span>
+			   							</a>
+			   							<a href="public/artist?artist.artistId=<s:property value='trackArtistList[0].artistId'/>">
+			   								<span class="artistName"><s:property value="trackArtistString"/></span>
+			   							</a>
+			   						</li>
+	   							</s:if>
+	   							<s:elseif test="#st.last">
+	   								<li class="chartItem">
+			   							<span class="rank"><s:property value="#st.index+1"/></span>
+			   							<a href="public/track?track.trackId=<s:property value='trackId'/>">
+			   								<span class="trackName"><s:property value="trackName"/></span>
+			   							</a>
+			   							<a href="public/artist?artist.artistId=<s:property value='trackArtistList[0].artistId'/>">
+			   								<span class="artistName"><s:property value="trackArtistString"/></span>
+			   							</a>
+			   						</li>
+	   							</s:elseif>
+	   							<s:else>
+	   								<li class="chartItem">
+			   							<span class="rank">0<s:property value="#st.index+1"/></span>
+			   							<a href="public/track?track.trackId=<s:property value='trackId'/>">
+			   								<span class="trackName"><s:property value="trackName"/></span>
+			   							</a>
+			   							<a href="public/artist?artist.artistId=<s:property value='trackArtistList[0].artistId'/>">
+			   								<span class="artistName"><s:property value="trackArtistString"/></span>
+			   							</a>
+			   						</li>
+	   							</s:else>
+	   						</s:iterator>
+	   						<%-- <!--Example-->
 	   						<li class="firstChartItem">
 	   							<span class="rank">01</span>
 	   							<a href="#">
@@ -407,79 +222,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   							<a href="#">
 	   								<span class="artistName">那英</span>
 	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">03</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">04</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">05</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">06</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">07</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">08</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">09</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
-	   						<li class="chartItem">
-	   							<span class="rank">10</span>
-	   							<a href="#">
-	   								<span class="trackName">春暖花开</span>
-	   							</a>
-	   							<a href="#">
-	   								<span class="artistName">那英</span>
-	   							</a>
-	   						</li>
+	   						</li> --%>
 	   					</ol>
 	   				</div>
 	   			</div>
@@ -487,7 +230,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					<div class="title"></div>
    					<div class="popularArtistsContainer">
    						<ul class="popularArtists">
-   							<!--Example-->
+   							<s:iterator value="hotArtistList" id="hotArtist">
+   								<li class="popularArtistItem">
+	   								<a href="public/artist?artist.artistId=<s:property value='artistId'/>">
+	   									<img src="<s:property value='artistImgList[1].imageUrl'/>"/>
+	   								</a>
+	   								<a href="public/artist?artist.artistId=<s:property value='artistId'/>">
+	   									<span class="artistName"><s:property value="artistName"/></span>
+	   								</a>
+	   							</li>
+   							</s:iterator>
+   							<%-- <!--Example-->
    							<li class="popularArtistItem">
    								<a href="#">
    									<img src="ui/img/test/popularArtist/img1.jpg"/>
@@ -495,52 +248,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    								<a href="#">
    									<span class="artistName">陈奕迅</span>
    								</a>
-   							</li>
-   							<!--Example-->
-   							<li class="popularArtistItem">
-   								<a href="#">
-   									<img src="ui/img/test/popularArtist/img2.jpg"/>
-   								</a>
-   								<a href="#">
-   									<span class="artistName">陈奕迅</span>
-   								</a>
-   							</li>
-   							<!--Example-->
-   							<li class="popularArtistItem">
-   								<a href="#">
-   									<img src="ui/img/test/popularArtist/img3.jpg"/>
-   								</a>
-   								<a href="#">
-   									<span class="artistName">陈奕迅</span>
-   								</a>
-   							</li>
-   							<!--Example-->
-   							<li class="popularArtistItem">
-   								<a href="#">
-   									<img src="ui/img/test/popularArtist/img1.jpg"/>
-   								</a>
-   								<a href="#">
-   									<span class="artistName">陈奕迅</span>
-   								</a>
-   							</li>
-   							<!--Example-->
-   							<li class="popularArtistItem">
-   								<a href="#">
-   									<img src="ui/img/test/popularArtist/img2.jpg"/>
-   								</a>
-   								<a href="#">
-   									<span class="artistName">陈奕迅</span>
-   								</a>
-   							</li>
-   							<!--Example-->
-   							<li class="popularArtistItem">
-   								<a href="#">
-   									<img src="ui/img/test/popularArtist/img1.jpg"/>
-   								</a>
-   								<a href="#">
-   									<span class="artistName">陈奕迅</span>
-   								</a>
-   							</li>
+   							</li> --%>
    						</ul>
    					</div>
    				</div>

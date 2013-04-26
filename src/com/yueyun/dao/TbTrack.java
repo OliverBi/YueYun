@@ -15,9 +15,6 @@ public class TbTrack implements java.io.Serializable {
 	private Integer trackPlayCount;
 	private Integer trackListeners;
 	private Integer trackAlbumId;
-	private String trackImgSmall;
-	private String trackImgMedium;
-	private String trackImgLarge;
 
 	// Constructors
 
@@ -32,18 +29,13 @@ public class TbTrack implements java.io.Serializable {
 
 	/** full constructor */
 	public TbTrack(String trackName, Integer trackDuration, String trackUrl,
-			Integer trackPlayCount, Integer trackListeners,
-			Integer trackAlbumId, String trackImgSmall, String trackImgMedium,
-			String trackImgLarge) {
+			Integer trackPlayCount, Integer trackListeners, Integer trackAlbumId) {
 		this.trackName = trackName;
 		this.trackDuration = trackDuration;
 		this.trackUrl = trackUrl;
 		this.trackPlayCount = trackPlayCount;
 		this.trackListeners = trackListeners;
 		this.trackAlbumId = trackAlbumId;
-		this.trackImgSmall = trackImgSmall;
-		this.trackImgMedium = trackImgMedium;
-		this.trackImgLarge = trackImgLarge;
 	}
 
 	// Property accessors
@@ -102,30 +94,6 @@ public class TbTrack implements java.io.Serializable {
 
 	public void setTrackAlbumId(Integer trackAlbumId) {
 		this.trackAlbumId = trackAlbumId;
-	}
-
-	public String getTrackImgSmall() {
-		return this.trackImgSmall;
-	}
-
-	public void setTrackImgSmall(String trackImgSmall) {
-		this.trackImgSmall = trackImgSmall;
-	}
-
-	public String getTrackImgMedium() {
-		return this.trackImgMedium;
-	}
-
-	public void setTrackImgMedium(String trackImgMedium) {
-		this.trackImgMedium = trackImgMedium;
-	}
-
-	public String getTrackImgLarge() {
-		return this.trackImgLarge;
-	}
-
-	public void setTrackImgLarge(String trackImgLarge) {
-		this.trackImgLarge = trackImgLarge;
 	}
 
 }

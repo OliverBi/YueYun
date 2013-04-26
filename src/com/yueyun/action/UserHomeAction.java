@@ -7,13 +7,16 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
-@SuppressWarnings("serial")
+@SuppressWarnings("serial") 
 public class UserHomeAction extends ActionSupport implements SessionAware{
 	
 	private Map<String, Object> session;
 	
 	public String userLoginCheck(){
-		if(session.get("SESSION_USER_EMAIL") != null)
+		//Login Auto
+		//
+		
+		if(session.get("SESSION_CURRENT_USER") != null)
 			return Action.SUCCESS;
 		else
 			return Action.LOGIN;

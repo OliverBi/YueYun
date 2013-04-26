@@ -13,6 +13,7 @@ public class TbArtist implements java.io.Serializable {
 	private String artistImgSmall;
 	private String artistImgMedium;
 	private String artistImgLarge;
+	private String artistImgMega;
 	private String artistDescription;
 
 	// Constructors
@@ -29,11 +30,12 @@ public class TbArtist implements java.io.Serializable {
 	/** full constructor */
 	public TbArtist(String artistName, String artistImgSmall,
 			String artistImgMedium, String artistImgLarge,
-			String artistDescription) {
+			String artistImgMega, String artistDescription) {
 		this.artistName = artistName;
 		this.artistImgSmall = artistImgSmall;
 		this.artistImgMedium = artistImgMedium;
 		this.artistImgLarge = artistImgLarge;
+		this.artistImgMega = artistImgMega;
 		this.artistDescription = artistDescription;
 	}
 
@@ -77,6 +79,14 @@ public class TbArtist implements java.io.Serializable {
 
 	public void setArtistImgLarge(String artistImgLarge) {
 		this.artistImgLarge = artistImgLarge;
+	}
+
+	public String getArtistImgMega() {
+		return this.artistImgMega;
+	}
+
+	public void setArtistImgMega(String artistImgMega) {
+		this.artistImgMega = artistImgMega;
 	}
 
 	public String getArtistDescription() {

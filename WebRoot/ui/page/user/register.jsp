@@ -135,7 +135,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   					$("#registerNameErrorContainer").html("");
 	   					$("#registerEmailErrorContainer").html("");
 	            		var registerInfoFirstStep = $("#registerForm").serialize();
-	            		var actionUrl = "/YueYun/userAjax/userRegisterFirstStepAction";
+	            		/* var actionUrl = "/YueYun/userAjax/userRegisterFirstStepAction"; */
+	            		var actionUrl = "/YueYun/userAjax/userRegisterAction!userRegisterCheck";
 	            		$.ajax({
 	            			url: actionUrl,
 		   					type: "POST",
@@ -152,25 +153,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   								$("#registerNameErrorContainer").html("").append("<div class='error' for='registerUser.userName'>您填写的昵称已经存在</div>");
 		   							}else if(data.result == "REGISTER_FAIL_USEREMAIL_EXIST"){
 		   								$("#registerEmailErrorContainer").html("").append("<div class='error' for='registerUser.userEmail'>您填写的电子邮箱地址已经存在</div>");
-		   							}else{
+		   							}else if(data.result == "REGISTER_FAIL_USERNAME_USEREMAIL_EXIST"){
 		   								$("#registerNameErrorContainer").html("").append("<div class='error' for='registerUser.userName'>您填写的昵称已经存在</div>");
 		   								$("#registerEmailErrorContainer").html("").append("<div class='error' for='registerUser.userEmail'>您填写的电子邮箱地址已经存在</div>");
+		   							}else{
+		   								alert("error");
 		   							}
 		   						}
 		   					}
 	            		});
 	            	}else{
 	            		var registerInfoSecondStep = $("#registerForm").serialize();
-	            		var actionUrl = "/YueYun/userAjax/userRegisterSecondStepAction";
+	            		/* var actionUrl = "/YueYun/userAjax/userRegisterSecondStepAction"; */
+	            		var actionUrl = "/YueYun/userAjax/userRegisterAction!userVerifyCheck";
 	            		$.ajax({
 	            			url: actionUrl,
 	            			type:"POST",
 	            			data: registerInfoSecondStep,
 	            			success:function(data){
 	            				if(data.result=="REGISTER_SECONDSTEP_SUCCESS"){
-	            					alert("success");
+	            					location.href = "/YueYun/public/index";
 	            				}else if(data.result == "REGISTER_FAIL_VERIFYCODE_WRONG"){
 	            					$("#registerVCodeErrorContainer").html("").append("<div class='error' for='registerVCode'>验证码错误</div>");
+	            				}else{
+	            					alert("error");
 	            				}
 	            			}
 	            		});

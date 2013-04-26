@@ -358,7 +358,7 @@
 	table-layout: fixed;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	max-width: 70px;
+	max-width: 120px;
 	word-break: keep-all;
 }
 

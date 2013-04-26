@@ -1,0 +1,324 @@
+@charset "utf-8";
+/* CSS Document */
+
+#artistPageBack
+{
+	background-color:#FFF;
+	padding-top:20px;
+}
+
+#artistPageContainer
+{
+	background-color:#FFF;
+}
+
+/*Left Page Part*/
+
+.artistPageLeftContainer
+{
+	float:left;
+	width:730px;
+}
+
+.artistPageLeftContainer .artistTitleContainer
+{
+	color: #333333;
+    height: 34px;
+    line-height: 34px;
+	float:left;
+	width:730px;
+	margin: 10px 0 10px 0;
+	font-size:28px;
+}
+
+.artistPageLeftContainer .artistTracksContainer
+{
+	float:left;
+	width:700px;
+}
+
+.artistTracksContainer .artistTracksTitle
+{
+	float:left;
+	background-attachment: scroll;
+	background-image: url(../img/artist/singer_bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height:30px;
+	width:130px;
+	margin:10px 0 20px 0;
+}
+
+.artistTracksContainer .artistTracksListContainer
+{
+	float:left;
+	width:700px;
+	margin-bottom:10px;
+}
+
+.artistPageLeftContainer .artistAlbumsContainer
+{
+	float:left;
+	width:700px;
+}
+
+.artistAlbumsContainer .artistAlbumsTitle
+{
+	float:left;
+	background-attachment: scroll;
+	background-image: url(../img/artist/singer_bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px -31px;
+	height:30px;
+	width:90px;
+	margin:10px 0 20px 0;
+}
+
+.artistAlbumsContainer .artistAlbumsListContainer
+{
+	float:left;
+	width:720px;
+}
+
+.artistAlbumsListContainer .aristAlbumItemContainer
+{
+	float: left;
+    height: 180px;
+    margin-right: 12px;
+    width: 130px;
+	overflow:hidden;
+}
+
+.aristAlbumItemContainer img
+{
+	width: 130px;
+	height: 130px;
+}
+
+.aristAlbumItemContainer .albumTitle
+{
+	margin: 5px 0;
+}
+
+.aristAlbumItemContainer .albumTitle a
+{
+	color: #515151;
+	height:20px;
+	line-height:20px;
+}
+
+.aristAlbumItemContainer .albumTitle a:hover
+{
+	text-decoration:none;
+}
+
+/* Copy from album.css Start*/
+
+.artistTracksListContainer .listSelectAll
+{
+	color: #8B8B8B;
+	height: 20px;
+	width:700px;
+	float:left;
+}
+
+.listSelectAll input[type="checkbox"]
+{
+	float:left;
+	margin: 2px 5px 0 0;
+}
+
+.listSelectAll label
+{
+	float:left;
+}
+
+.artistTracksListContainer .listItem
+{
+	float:left;
+	width:700px;
+	height: 30px;
+}
+
+.listItem input[type="checkbox"]
+{
+	float:left;
+	margin: 9px 10px 0 0;
+}
+
+.listItem .trackName
+{
+	float:left;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+	width:290px;
+}
+
+.listItem .trackName a
+{
+	color: #0F820C;
+}
+
+.listItem .trackName a:hover
+{
+	text-decoration:none;
+}
+
+.listItem .artistName
+{
+	float:left;
+	width:130px;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+}
+
+.listItem .artistName a
+{
+	color:#515151;
+}
+
+.listItem .albumName
+{
+	float:left;
+	width:130px;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+}
+
+.listItem .albumName a
+{
+	color:#515151;
+}
+
+.listItem .artistName a:hover
+{
+	text-decoration:none;
+}
+
+.listItem .trackOption
+{
+	float:right;
+	width: 142px;
+	margin-top:10px;
+}
+
+.trackOption .play
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: 0px -169px;
+}
+
+.trackOption .play:hover
+{
+	background-position: 0px -183px;
+}
+
+.trackOption .add
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -42px -169px;
+}
+
+.trackOption .add:hover
+{
+	background-position: -42px -183px;
+}
+
+.trackOption .like
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -14px -169px;
+}
+
+.trackOption .like:hover
+{
+	background-position: -14px -183px;
+}
+
+.trackOption .collect
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -71px -211px;
+}
+
+.trackOption .collect:hover
+{
+	background-position: -56px -211px;
+}
+
+.trackOption .share
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -28px -169px;
+}
+
+.trackOption .share:hover
+{
+	background-position: -28px -183px;
+}
+
+/* Copy from album.css End*/
+
+/*Right Page Part*/
+
+.artistPageRightContainer
+{
+	float:right;
+	width:220px;
+}
+
+.artistPageRightContainer .artistImgContainer
+{
+	float:left;
+	margin:20px 0 0 0;
+}
+
+.artistImgContainer img
+{
+	width:220px;
+	height:220px;
+}
+
+.artistPageRightContainer .artistInfoContainer
+{
+	float:left;
+	width:220px;
+}
+
+.artistInfoContainer .artistInfoTitle
+{
+	float:left;
+	background-attachment: scroll;
+	background-image: url(../img/artist/singer_bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px -155px;
+	width:80px;
+	height:30px;
+	margin:5px 0;
+	clear:right;
+}
+
+.artistInfoContainer .artistInfoDetail
+{
+	float:left;
+	color: #8B8B8B;
+	line-height:24px;
+}

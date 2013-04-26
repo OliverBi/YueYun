@@ -22,22 +22,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		<div id="navBarContainer" class="pageContainer">
    			<s:if test="navItem == 'homePage'">
    				<div class="navBarItemContainerOn">
-   					<a href="ui/page/public/index.jsp"><s:text name="homePage"/></a>
+   					<a href="public/index"><s:text name="homePage"/></a>
    				</div>
    			</s:if>
    			<s:else>
    				<div class="navBarItemContainer">
-   					<a href="ui/page/public/index.jsp"><s:text name="homePage"/></a>
+   					<a href="public/index"><s:text name="homePage"/></a>
    				</div>
    			</s:else>
    			<s:if test="navItem == 'personalPage'">
    				<div class="navBarItemContainerOn" style="width:120px;">
-   					<a href="user/userCheckAction"><s:text name="personalPage"/></a>
+   					<a href="user/home"><s:text name="personalPage"/></a>
    				</div>
    			</s:if>
    			<s:else>
    				<div class="navBarItemContainer" style="width:120px;">
-   					<a href="user/userCheckAction"><s:text name="personalPage"/></a>
+   					<a href="user/home"><s:text name="personalPage"/></a>
    				</div>
    			</s:else>
    		</div>

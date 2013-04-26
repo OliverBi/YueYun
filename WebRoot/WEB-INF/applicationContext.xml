@@ -35,7 +35,12 @@
 				<value>com/yueyun/dao/TbTrack.hbm.xml</value>
 				<value>com/yueyun/dao/TbArtist.hbm.xml</value>
 				<value>com/yueyun/dao/TbAlbum.hbm.xml</value>
-				<value>com/yueyun/dao/TbArtistlist.hbm.xml</value></list>
+				<value>com/yueyun/dao/TbArtistlist.hbm.xml</value>
+				<value>com/yueyun/dao/TbHotartist.hbm.xml</value>
+				<value>com/yueyun/dao/TbHotrecommendtrack.hbm.xml</value>
+				<value>com/yueyun/dao/TbNewalbum.hbm.xml</value>
+				<value>com/yueyun/dao/TbNewrecommendtrack.hbm.xml</value>
+				<value>com/yueyun/dao/TbTrackrank.hbm.xml</value></list>
 		</property>
 	</bean>
 	<bean id="transactionManager" 
@@ -48,6 +53,7 @@
 		<property name="transactionAttributes">
 			<props>
 				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="check*">PROPAGATION_REQUIRED,readOnly</prop>
 				<prop key="*">PROPAGATION_REQUIRED</prop>
 			</props>
 		</property>
@@ -56,6 +62,10 @@
 		<property name="beanNames">
 			<list>
 				<value>tbUserService</value>
+				<value>tbIndexService</value>
+				<value>tbTrackService</value>
+				<value>tbAlbumService</value>
+				<value>tbArtistService</value>
 			</list>
 		</property>
 		<property name="interceptorNames">
@@ -65,16 +75,6 @@
 		</property>
 	</bean>
 	
-	<bean id="TbUserDAO" class="com.yueyun.dao.TbUserDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="TbUserService" class="com.yueyun.service.TbUserService">
-		<property name="tbUserDAO">
-			<ref bean="TbUserDAO" />
-		</property>
-	</bean>
 	<!-- Action Declare -->
 	<bean id="UserLoginAction" class="com.yueyun.action.UserLoginAction">
 		<property name="tbUserService">
@@ -84,15 +84,115 @@
 	<bean id="UserLogoutAction" class="com.yueyun.action.UserLogoutAction">
 		
 	</bean>
-	<bean id="UserRegisterAction" class="com.yueyun.action.UserRegisterAction">
+	<bean id="UserRegisterAction" class="com.yueyun.action.UserRegisterAction" scope="prototype">
 		<property name="tbUserService">
 			<ref bean="TbUserService" />
 		</property>
 	</bean>
 	<bean id="UserHomeAction" class="com.yueyun.action.UserHomeAction">
 	</bean>
+	<bean id="PublicIndexAction" class="com.yueyun.action.PublicIndexAction">
+		<property name="tbIndexService">
+			<ref bean="TbIndexService" />
+		</property>
+	</bean>
+	<bean id="PublicMusicAction" class="com.yueyun.action.PublicMusicAction">
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbArtistService">
+			<ref bean="TbArtistService" />
+		</property>
+	</bean>
 	<bean id="VerifyCodeImageAction" class="com.yueyun.action.VerifyCodeImageAction">
-		
+	</bean>
+	
+	<!-- Service Declare -->
+	<bean id="TbUserService" class="com.yueyun.service.TbUserService">
+		<property name="tbUserDAO">
+			<ref bean="TbUserDAO" />
+		</property>
+	</bean>
+	<bean id="TbIndexService" class="com.yueyun.service.TbIndexService">
+		<property name="tbNewAlbumDAO">
+			<ref bean="TbNewalbumDAO" />
+		</property>
+		<property name="tbNewRecommendTrackDAO">
+			<ref bean="TbNewrecommendtrackDAO" />
+		</property>
+		<property name="tbHotRecommendTrackDAO">
+			<ref bean="TbHotrecommendtrackDAO" />
+		</property>
+		<property name="tbTrackRankDAO">
+			<ref bean="TbTrackrankDAO" />
+		</property>
+		<property name="tbHotArtistDAO">
+			<ref bean="TbHotartistDAO" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbArtistService">
+			<ref bean="TbArtistService" />
+		</property>
+	</bean>
+	<bean id="TbTrackService" class="com.yueyun.service.TbTrackService">
+		<property name="tbTrackDAO">
+			<ref bean="TbTrackDAO" />
+		</property>
+		<property name="tbArtistListDAO">
+			<ref bean="TbArtistlistDAO" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbArtistService">
+			<ref bean="TbArtistService" />
+		</property>
+	</bean>
+	<bean id="TbAlbumService" class="com.yueyun.service.TbAlbumService">
+		<property name="tbAlbumDAO">
+			<ref bean="TbAlbumDAO" />
+		</property>
+		<property name="tbTrackDAO">
+			<ref bean="TbTrackDAO" />
+		</property>
+		<property name="tbArtistService">
+			<ref bean="TbArtistService" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+	</bean>
+	<bean id="TbArtistService" class="com.yueyun.service.TbArtistService">
+		<property name="tbArtistDAO">
+			<ref bean="TbArtistDAO" />
+		</property>
+		<property name="tbAlbumDAO">
+			<ref bean="TbAlbumDAO" />
+		</property>
+		<property name="tbArtistlistDAO">
+			<ref bean="TbArtistlistDAO" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+	</bean>
+	
+	<!-- DAO Declare Create by Myeclipse -->
+	<bean id="TbUserDAO" class="com.yueyun.dao.TbUserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
 	</bean>
 	<bean id="TbTrackDAO" class="com.yueyun.dao.TbTrackDAO">
 		<property name="sessionFactory">
@@ -110,6 +210,33 @@
 		</property>
 	</bean>
 	<bean id="TbArtistlistDAO" class="com.yueyun.dao.TbArtistlistDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbHotartistDAO" class="com.yueyun.dao.TbHotartistDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbHotrecommendtrackDAO"
+		class="com.yueyun.dao.TbHotrecommendtrackDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbNewalbumDAO" class="com.yueyun.dao.TbNewalbumDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbNewrecommendtrackDAO"
+		class="com.yueyun.dao.TbNewrecommendtrackDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbTrackrankDAO" class="com.yueyun.dao.TbTrackrankDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

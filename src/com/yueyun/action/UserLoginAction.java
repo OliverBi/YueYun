@@ -1,21 +1,24 @@
 package com.yueyun.action;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 import org.apache.struts2.json.annotations.JSON;
 
 import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.yueyun.dao.TbUser;
+import com.yueyun.domain.User;
 import com.yueyun.service.TbUserService;
 
 @SuppressWarnings("serial")
-public class UserLoginAction extends ActionSupport{
+public class UserLoginAction extends ActionSupport implements SessionAware{
 	private String userEmail;
 	private String userPassword;
 	private TbUserService tbUserService;
 	private String result;
+	private Map<String, Object> session;
 	
 	public static final String LOGIN_SUCCESS = "LOGIN_SUCCESS";
 	public static final String LOGIN_FAIL = "LOGIN_FAIL";
@@ -47,14 +50,27 @@ public class UserLoginAction extends ActionSupport{
 		this.tbUserService = tbUserService;
 	}
 	public String userLoginCheck(){
-		if(tbUserService.checkLoginInfo(this.userEmail, this.userPassword)){
-			ActionContext actionContext = ActionContext.getContext();
-			Map session = actionContext.getSession();
-			session.put("SESSION_USER_EMAIL", this.userEmail);
+		TbUser tbUser = tbUserService.checkLoginInfo(this.userEmail, this.userPassword);
+		if(tbUser != null){
+			User currentUser = new User();
+			currentUser.setUserId(tbUser.getUserId());
+			currentUser.setUserName(tbUser.getUserName());
+			currentUser.setUserEmail(tbUser.getUserEmail());
+			currentUser.setUserBirthday(new Date(tbUser.getUserBirthday().getTime()));
+			currentUser.setUserAvatarUrl(tbUser.getUserAvatarUrl());
+			currentUser.setUserGender(tbUser.getUserGender());
+			currentUser.setUserDescription(tbUser.getUserDescription());
+			this.session.put("SESSION_CURRENT_USER", currentUser);
 			this.result = UserLoginAction.LOGIN_SUCCESS;
 		}
-		else
+		else{
 			this.result = UserLoginAction.LOGIN_FAIL;
+		}
 		return Action.SUCCESS;
+	}
+	
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 }

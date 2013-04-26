@@ -28,9 +28,6 @@ public class TbTrackDAO extends HibernateDaoSupport {
 	public static final String TRACK_PLAY_COUNT = "trackPlayCount";
 	public static final String TRACK_LISTENERS = "trackListeners";
 	public static final String TRACK_ALBUM_ID = "trackAlbumId";
-	public static final String TRACK_IMG_SMALL = "trackImgSmall";
-	public static final String TRACK_IMG_MEDIUM = "trackImgMedium";
-	public static final String TRACK_IMG_LARGE = "trackImgLarge";
 
 	protected void initDao() {
 		// do nothing
@@ -118,18 +115,6 @@ public class TbTrackDAO extends HibernateDaoSupport {
 
 	public List findByTrackAlbumId(Object trackAlbumId) {
 		return findByProperty(TRACK_ALBUM_ID, trackAlbumId);
-	}
-
-	public List findByTrackImgSmall(Object trackImgSmall) {
-		return findByProperty(TRACK_IMG_SMALL, trackImgSmall);
-	}
-
-	public List findByTrackImgMedium(Object trackImgMedium) {
-		return findByProperty(TRACK_IMG_MEDIUM, trackImgMedium);
-	}
-
-	public List findByTrackImgLarge(Object trackImgLarge) {
-		return findByProperty(TRACK_IMG_LARGE, trackImgLarge);
 	}
 
 	public List findAll() {

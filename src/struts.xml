@@ -3,27 +3,72 @@
 <struts>
 	<constant name="struts.custom.i18n.resources" value="message" />
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
-	<constant name="struts.devMode" value="true"/> 
+	<constant name="struts.devMode" value="true"/>
 	
 	<package name="userAjaxPackage" extends="json-default" namespace="/userAjax">
 		<action name="userLoginAction" class="UserLoginAction" method="userLoginCheck">
 			<result type="json"></result>
 		</action>
-		<action name="userRegisterFirstStepAction" class="UserRegisterAction" method="userRegisterCheck">
+		<!-- <action name="userRegisterFirstStepAction" class="UserRegisterAction" method="userRegisterCheck">
 			<result type="json"></result>
 		</action>
 		<action name="userRegisterSecondStepAction" class="UserRegisterAction" method="userVerifyCheck">
+			<result type="json"></result>
+		</action> -->
+		<action name="userRegisterAction" class="UserRegisterAction">
 			<result type="json"></result>
 		</action>
 	</package>
 	
 	<package name="userPackage" extends="struts-default" namespace="/user">
-		<action name="userCheckAction" class="UserHomeAction" method="userLoginCheck">
+		<action name="home" class="UserHomeAction" method="userLoginCheck">
 			<result name="success">/ui/page/user/home.jsp</result>
-			<result name="login">/ui/page/user/login.jsp</result>
+			<result name="login" type="redirectAction">
+				<param name="actionName">login</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+		<action name="login">
+			<result>/ui/page/user/login.jsp</result>
+		</action>
+		<action name="register">
+			<result>/ui/page/user/register.jsp</result>
 		</action>
 		<action name="userLogoutAction" class="UserLogoutAction">
-			<result>/ui/page/public/index.jsp</result>
+			<!-- <result type="chain">
+				<param name="actionName">index</param>
+				<param name="namespace">/public</param>
+			</result> -->
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/public</param>
+			</result>
+		</action>
+	</package>
+	<package name="publicPackage" extends="struts-default" namespace="/public">
+		<action name="index" class="PublicIndexAction">
+			<result name="success">/ui/page/public/index.jsp</result>
+		</action>
+		<action name="album" class="PublicMusicAction" method="getAlbumInfo">
+			<result name="success">/ui/page/public/album.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/public</param>
+			</result>
+		</action>
+		<action name="artist" class="PublicMusicAction" method="getArtistInfo">
+			<result name="success">/ui/page/public/artist.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/public</param>
+			</result>
+		</action>
+		<action name="track" class="PublicMusicAction" method="getTrackInfo">
+			<result name="success">/ui/page/public/track.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/public</param>
+			</result>
 		</action>
 	</package>
 	

@@ -54,7 +54,7 @@ public class UserRegisterAction extends ActionSupport implements SessionAware{
 	public void setRegisterVCode(String registerVCode) {
 		this.registerVCode = registerVCode;
 	}
-	
+	@JSON(serialize=false)
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}

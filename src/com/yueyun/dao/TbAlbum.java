@@ -15,7 +15,9 @@ public class TbAlbum implements java.io.Serializable {
 	private String albumImgSmall;
 	private String albumImgMedium;
 	private String albumImgLarge;
+	private String albumImgMega;
 	private Timestamp albumReleaseDate;
+	private Integer albumArtistId;
 
 	// Constructors
 
@@ -30,13 +32,15 @@ public class TbAlbum implements java.io.Serializable {
 
 	/** full constructor */
 	public TbAlbum(String albumName, String albumImgSmall,
-			String albumImgMedium, String albumImgLarge,
-			Timestamp albumReleaseDate) {
+			String albumImgMedium, String albumImgLarge, String albumImgMega,
+			Timestamp albumReleaseDate, Integer albumArtistId) {
 		this.albumName = albumName;
 		this.albumImgSmall = albumImgSmall;
 		this.albumImgMedium = albumImgMedium;
 		this.albumImgLarge = albumImgLarge;
+		this.albumImgMega = albumImgMega;
 		this.albumReleaseDate = albumReleaseDate;
+		this.albumArtistId = albumArtistId;
 	}
 
 	// Property accessors
@@ -81,12 +85,28 @@ public class TbAlbum implements java.io.Serializable {
 		this.albumImgLarge = albumImgLarge;
 	}
 
+	public String getAlbumImgMega() {
+		return this.albumImgMega;
+	}
+
+	public void setAlbumImgMega(String albumImgMega) {
+		this.albumImgMega = albumImgMega;
+	}
+
 	public Timestamp getAlbumReleaseDate() {
 		return this.albumReleaseDate;
 	}
 
 	public void setAlbumReleaseDate(Timestamp albumReleaseDate) {
 		this.albumReleaseDate = albumReleaseDate;
+	}
+
+	public Integer getAlbumArtistId() {
+		return this.albumArtistId;
+	}
+
+	public void setAlbumArtistId(Integer albumArtistId) {
+		this.albumArtistId = albumArtistId;
 	}
 
 }

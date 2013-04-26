@@ -22,6 +22,9 @@
         <property name="artistImgLarge" type="java.lang.String">
             <column name="artistImgLarge" length="128" />
         </property>
+        <property name="artistImgMega" type="java.lang.String">
+            <column name="artistImgMega" length="128" />
+        </property>
         <property name="artistDescription" type="java.lang.String">
             <column name="artistDescription" />
         </property>

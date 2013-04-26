@@ -28,14 +28,5 @@
         <property name="trackAlbumId" type="java.lang.Integer">
             <column name="trackAlbumId" />
         </property>
-        <property name="trackImgSmall" type="java.lang.String">
-            <column name="trackImgSmall" length="128" />
-        </property>
-        <property name="trackImgMedium" type="java.lang.String">
-            <column name="trackImgMedium" length="128" />
-        </property>
-        <property name="trackImgLarge" type="java.lang.String">
-            <column name="trackImgLarge" length="128" />
-        </property>
     </class>
 </hibernate-mapping>

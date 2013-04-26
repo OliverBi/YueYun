@@ -1,0 +1,436 @@
+@charset "utf-8";
+/* CSS Document */
+
+#albumPageBack
+{
+	background-color:#FFF;
+	padding-top:20px;
+}
+
+#albumPageContainer
+{
+	background-color:#FFF;
+}
+
+.albumPageLeftContainer
+{
+	float:left;
+	width:730px;
+}
+
+.albumPageRightContainer
+{
+	float:right;
+	width:220px;
+}
+
+.albumImgContainer
+{
+	height: 300px;
+	width: 300px;
+	background-image: url(../img/album/album_bg.png);
+	position:relative;
+	float:left;
+}
+
+.albumImgContainer img
+{
+	position:absolute;
+	left:42px;
+	top:17px;
+	width:240px;
+	height:240px;
+}
+
+.albumInfoContainer
+{
+	float:left;
+	width:410px;
+}
+
+.albumInfoContainer .albumInfoTitleContainer
+{
+	margin:10px 0 0 15px;
+	line-height:36px;
+	font-size:28px;
+	color:#333;
+}
+
+.albumInfoContainer .albumInfoPlayContainer
+{
+	width: 60px;
+	height: 59px;
+	background-attachment: scroll;
+	background-color: transparent;
+	background-image: url(../img/index/icon_sprite.png);
+	background-repeat: no-repeat;
+	background-position: -61px 0px;
+	margin:10px 0 0 15px;
+}
+
+.albumInfoContainer .albumInfoPlayContainer:hover
+{
+	background-position: -122px 0px;
+}
+
+.albumInfoContainer .albumInfoContentContainer
+{
+	line-height:24px;
+	color: #8B8B8B;
+	margin:10px 0 0 15px;
+}
+
+.albumInfoContainer .albumInfoContentContainer span
+{
+	display: block;
+}
+
+.albumInfoContainer .albumInfoOptionContainer
+{
+	border: 1px solid #DDDDDD;
+	height:31px;
+	width: 287px;
+	margin: 10px 0 0 15px;
+}
+
+.albumInfoOptionContainer .albumInfoOptionItem
+{
+	float:left;
+	border-right: 1px solid #DDDDDD;
+	height:31px;
+	line-height:31px;
+	color: #515151;
+	text-decoration:none;
+}
+
+.albumInfoOptionContainer .albumInfoOptionItem:hover
+{
+	background-color: #0F820C;
+	color: #FFF;
+}
+
+.albumInfoOptionItem.store
+{
+	width: 74px;
+}
+
+.albumInfoOptionItem.store .storeImg
+{
+	background-position: -155px -182px;
+	background-image: url(../img/index/icon_sprite.png);
+	width:22px;
+	height:22px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	margin: 4px 7px 0 10px;
+	float:left;
+}
+
+.albumInfoOptionItem.store:hover .storeImg
+{
+	background-position: -177px -182px;
+}
+
+.albumInfoOptionItem.share
+{
+	width: 74px;
+}
+
+.albumInfoOptionItem.share .shareImg
+{
+	background-position: -133px -138px;
+	background-image: url(../img/index/icon_sprite.png);
+	width:22px;
+	height:22px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	margin: 4px 7px 0 10px;
+	float:left;
+}
+
+.albumInfoOptionItem.share:hover .shareImg
+{
+	background-position: -133px -160px;
+}
+
+.albumInfoOptionItem.good
+{
+	width: 68px;
+}
+
+.albumInfoOptionItem.good .goodImg
+{
+	background-position: -155px -138px;
+	background-image: url(../img/index/icon_sprite.png);
+	width:22px;
+	height:22px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	margin: 4px 7px 0 10px;
+	float:left;
+}
+
+.albumInfoOptionItem.good:hover .goodImg
+{
+	background-position: -155px -160px;
+}
+
+.albumInfoOptionItem.bad
+{
+	width: 68px;
+	border-right-style: none;
+}
+
+.albumInfoOptionItem.bad .badImg
+{
+	background-position: -177px -138px;
+	background-image: url(../img/index/icon_sprite.png);
+	width:22px;
+	height:22px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	margin: 4px 7px 0 10px;
+	float:left;
+}
+
+.albumInfoOptionItem.bad:hover .badImg
+{
+	background-position: -177px -160px;
+}
+
+.albumTracksContainer
+{
+	
+}
+
+.albumTracksContainer .albumTracksTitleContainer
+{
+	height: 30px;
+	width: 130px;
+	background-image: url(../img/album/other_title_bg.png);
+	background-position: 0px -62px;
+	margin: 0 0 20px 10px;
+	float:left;
+}
+
+.albumTracksContainer  .albumTracksListContainer
+{
+	float:left;
+	margin: 0 0 50px 10px;
+	width:700px;
+}
+
+.albumTracksListContainer .listSelectAll
+{
+	color: #8B8B8B;
+	height: 20px;
+	width:700px;
+	float:left;
+}
+
+.listSelectAll input[type="checkbox"]
+{
+	float:left;
+	margin: 2px 5px 0 0;
+}
+
+.listSelectAll label
+{
+	float:left;
+}
+
+.albumTracksListContainer .listItem
+{
+	float:left;
+	width:700px;
+	height: 30px;
+}
+
+.listItem input[type="checkbox"]
+{
+	float:left;
+	margin: 9px 10px 0 0;
+}
+
+.listItem .trackName
+{
+	float:left;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+	width:290px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.listItem .trackName a
+{
+	color: #0F820C;
+}
+
+.listItem .trackName a:hover
+{
+	text-decoration:none;
+}
+
+.listItem .artistName
+{
+	float:left;
+	width:130px;
+	overflow:hidden;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.listItem .artistName a
+{
+	color:#515151;
+}
+
+.listItem .artistName a:hover
+{
+	text-decoration:none;
+}
+
+
+.listItem .trackOption
+{
+	float:right;
+	width: 142px;
+	margin-top:10px;
+}
+
+.trackOption .play
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: 0px -169px;
+}
+
+.trackOption .play:hover
+{
+	background-position: 0px -183px;
+}
+
+.trackOption .add
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -42px -169px;
+}
+
+.trackOption .add:hover
+{
+	background-position: -42px -183px;
+}
+
+.trackOption .like
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -14px -169px;
+}
+
+.trackOption .like:hover
+{
+	background-position: -14px -183px;
+}
+
+.trackOption .collect
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -71px -211px;
+}
+
+.trackOption .collect:hover
+{
+	background-position: -56px -211px;
+}
+
+.trackOption .share
+{
+	height: 14px;
+	width: 14px;
+	display:inline-block;
+	background-image: url(../img/index/icon_sprite.png);
+	background-position: -28px -169px;
+}
+
+.trackOption .share:hover
+{
+	background-position: -28px -183px;
+}
+
+.albumPageRightContainer .albumOthersContainer
+{
+	width:220px;
+}
+
+.albumOthersContainer .albumOthersTitleContainer
+{
+	float:left;
+	height:30px;
+	width:124px;
+	margin:13px 0 13px 0;
+	background-image: url(../img/album/other_title_bg.png);
+	background-position: 0px -31px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+}
+
+.albumOthersContainer .albumOthersContentContainer
+{
+	float:left;
+	width:220px;
+	color:#8B8B8B;
+}
+
+.albumOthersContentContainer .albumOthersItemContainer
+{
+	float:left;
+	width:100px;
+	height:175px;
+	margin: 0 10px 0 0;
+}
+
+.albumOthersItemContainer .albumImage
+{
+	width:100px;
+	height:100px;
+}
+
+.albumOthersItemContainer .albumTitle
+{
+	margin-bottom:6px;
+}
+
+.albumOthersItemContainer .albumTitle a
+{
+	color:#0F820C;
+	line-height:18px;
+}
+
+.albumOthersItemContainer .albumTitle a:hover
+{
+	text-decoration:none;
+}
+
+.albumOthersItemContainer .albumDate
+{
+	color:#8B8B8B;
+}

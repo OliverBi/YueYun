@@ -27,6 +27,7 @@ public class TbArtistDAO extends HibernateDaoSupport {
 	public static final String ARTIST_IMG_SMALL = "artistImgSmall";
 	public static final String ARTIST_IMG_MEDIUM = "artistImgMedium";
 	public static final String ARTIST_IMG_LARGE = "artistImgLarge";
+	public static final String ARTIST_IMG_MEGA = "artistImgMega";
 	public static final String ARTIST_DESCRIPTION = "artistDescription";
 
 	protected void initDao() {
@@ -107,6 +108,10 @@ public class TbArtistDAO extends HibernateDaoSupport {
 
 	public List findByArtistImgLarge(Object artistImgLarge) {
 		return findByProperty(ARTIST_IMG_LARGE, artistImgLarge);
+	}
+
+	public List findByArtistImgMega(Object artistImgMega) {
+		return findByProperty(ARTIST_IMG_MEGA, artistImgMega);
 	}
 
 	public List findByArtistDescription(Object artistDescription) {

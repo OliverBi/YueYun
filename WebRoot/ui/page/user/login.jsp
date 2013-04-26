@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   					data: loginInfo,
 		   					success: function(data){
 		   						if(data.result=="LOGIN_SUCCESS"){
-		   							location.href = "/YueYun/ui/page/public/index.jsp";
+		   							location.href = "/YueYun/public/index";
 		   						}else{
 		   							$("#loginAjaxErrorMessage").html("").append("<label class='error'>邮箱或密码错误</label>");
 		   						}
@@ -119,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			     </div>
 			     <div id="loginFormRightContent">
 			     	<div class="loginFormOptionLinkContainer">
-			     		<a href="ui/page/user/register.jsp"><s:text name="newUserRegister"/></a>
+			     		<a href="user/register"><s:text name="newUserRegister"/></a>
 			     	</div>
 			     	<div class="loginFormOptionLinkContainer">
 			     		<a href=""><s:text name="forgetPassword"/></a>

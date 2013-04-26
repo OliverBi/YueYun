@@ -1,5 +1,4 @@
 package com.yueyun.service;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import com.yueyun.action.UserRegisterAction;
@@ -18,17 +17,17 @@ public class TbUserService{
 		this.tbUserDAO = tbUserDAO;
 	}
 	
-	public boolean checkLoginInfo(String userEmail, String userPassword){
-		boolean result = false;
+	public TbUser checkLoginInfo(String userEmail, String userPassword){
+		/*boolean result = false;*/
+		TbUser tbUser = null;
 		TbUser loginUser = new TbUser();
 		loginUser.setUserEmail(userEmail);
 		loginUser.setUserPassword(SecurityPassword.encryptPassword(userPassword));
 		List<TbUser> list = tbUserDAO.findByExample(loginUser);
-		if(list != null && list.size() > 0)
-			result = true;
-		else
-			result = false;
-		return result;
+		if(list.size() == 1){
+			tbUser = list.get(0);
+		}
+		return tbUser;
 	}
 	
 	public String checkRegisterInfo(TbUser registerUser){

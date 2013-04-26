@@ -22,8 +22,14 @@
         <property name="albumImgLarge" type="java.lang.String">
             <column name="albumImgLarge" length="128" />
         </property>
+        <property name="albumImgMega" type="java.lang.String">
+            <column name="albumImgMega" length="128" />
+        </property>
         <property name="albumReleaseDate" type="java.sql.Timestamp">
             <column name="albumReleaseDate" length="19" />
+        </property>
+        <property name="albumArtistId" type="java.lang.Integer">
+            <column name="albumArtistId" />
         </property>
     </class>
 </hibernate-mapping>

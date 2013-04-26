@@ -15,22 +15,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="topUserBarBack">
     	<div id="topUserBarContainer">
     		<div id="topUserBarLogoContainer">
-    			<a href="ui/page/public/index.jsp">
+    			<a href="public/index">
     				<s:text name="yueYun"></s:text>
     			</a>
     		</div>
     		<div id="topUserBarOptContainer">
-    			<s:if test="%{#session.SESSION_USER_EMAIL!=null}">
+    			<s:if test="%{#session.SESSION_CURRENT_USER!=null}">
     				<div class="topUserBarOpt">
     					<a href="user/userLogoutAction"><s:text name="logout" /></a>
     				</div>
     			</s:if>
     			<s:else>
     				<div class="topUserBarOpt">
-    					<a href="ui/page/user/register.jsp"><s:text name="register" /></a>
+    					<a href="user/register"><s:text name="register" /></a>
     				</div>
     				<div class="topUserBarOpt">
-    					<a href="ui/page/user/login.jsp"><s:text name="login" /></a>
+    					<a href="user/login"><s:text name="login" /></a>
     				</div>
     			</s:else>
     		</div>
