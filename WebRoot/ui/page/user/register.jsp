@@ -26,8 +26,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<script src="ui/js/jquery/jquery.ui.widget.js" type="text/javascript"></script>
    	<script src="ui/js/jquery/jquery.ui.datepicker.js" type="text/javascript"></script>
    	<script src="ui/js/jquery/jquery.ui.datepicker-zh-TW.js" type="text/javascript"></script>
+   	<script src="ui/js/jquery/jquery.blockUI.js" type="text/javascript"></script>
    	
-   	<script type="text/javascript">
+   	<script src="ui/js/register.js" type="text/javascript"></script>
+   	
+   	<%-- <script type="text/javascript">
    		function RegisterManager(){
    			this.init();
    		}
@@ -186,7 +189,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		});
    		};
    		var registerManager = new RegisterManager();
-   	</script>
+   	</script> --%>
   </head>
   <body>
     <s:include value="../../component/topUserBar.jsp"></s:include>

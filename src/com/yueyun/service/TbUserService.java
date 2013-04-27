@@ -49,8 +49,14 @@ public class TbUserService{
 			return UserRegisterAction.REGISTER_FIRSTSTEP_SUCCESS;
 	}
 	
-	public void registerNewUser(TbUser registerUser){
+	public TbUser registerNewUser(TbUser registerUser){
 		registerUser.setUserPassword(SecurityPassword.encryptPassword(registerUser.getUserPassword()));
 		tbUserDAO.save(registerUser);
+		TbUser tbUser = null;
+		List<TbUser> userList = tbUserDAO.findByExample(registerUser);
+		if(userList.size() == 1){
+			tbUser = userList.get(0);
+		}
+		return tbUser;
 	}
 }

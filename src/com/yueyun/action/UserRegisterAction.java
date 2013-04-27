@@ -1,5 +1,6 @@
 package com.yueyun.action;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -8,6 +9,7 @@ import org.apache.struts2.json.annotations.JSON;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.yueyun.dao.TbUser;
+import com.yueyun.domain.User;
 import com.yueyun.service.TbUserService;
 
 @SuppressWarnings("serial")
@@ -24,6 +26,7 @@ public class UserRegisterAction extends ActionSupport implements SessionAware{
 	public static final String REGISTER_FAIL_USEREMAIL_EXIST = "REGISTER_FAIL_USEREMAIL_EXIST";
 	public static final String REGISTER_FAIL_USERNAME_USEREMAIL_EXIST = "REGISTER_FAIL_USERNAME_USEREMAIL_EXIST";
 	public static final String REGISTER_FAIL_VERIFYCODE_WRONG = "REGISTER_FAIL_VERIFYCODE_WRONG";
+	public static final String REGISTER_FAIL = "REGISTER_FAIL";
 	
 	public TbUser getRegisterUser() {
 		return registerUser;
@@ -67,8 +70,21 @@ public class UserRegisterAction extends ActionSupport implements SessionAware{
 	public String userVerifyCheck(){
 		String verifyCode = (String)session.get("SESSION_VERIFY_CODE");
 		if(verifyCode.equals(this.registerVCode)){
-			tbUserService.registerNewUser(registerUser);
-			result = REGISTER_SECONDSTEP_SUCCESS;
+			TbUser tbUser = tbUserService.registerNewUser(registerUser);
+			if(tbUser != null){
+			User currentUser = new User();
+				currentUser.setUserId(tbUser.getUserId());
+				currentUser.setUserName(tbUser.getUserName());
+				currentUser.setUserEmail(tbUser.getUserEmail());
+				currentUser.setUserBirthday(new Date(tbUser.getUserBirthday().getTime()));
+				currentUser.setUserAvatarUrl(tbUser.getUserAvatarUrl());
+				currentUser.setUserGender(tbUser.getUserGender());
+				currentUser.setUserDescription(tbUser.getUserDescription());
+				this.session.put("SESSION_CURRENT_USER", currentUser);
+				result = REGISTER_SECONDSTEP_SUCCESS;
+			}else{
+				result = REGISTER_FAIL;
+			}
 		}
 		else
 			result = REGISTER_FAIL_VERIFYCODE_WRONG;
