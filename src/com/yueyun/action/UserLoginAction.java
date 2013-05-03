@@ -22,6 +22,8 @@ public class UserLoginAction extends ActionSupport implements SessionAware{
 	
 	public static final String LOGIN_SUCCESS = "LOGIN_SUCCESS";
 	public static final String LOGIN_FAIL = "LOGIN_FAIL";
+	public static final String IS_LOGIN = "IS_LOGIN";
+	public static final String NOT_LOGIN_STRING = "NOT_LOGIN";
 	
 	public String getResult() {
 		return result;
@@ -65,6 +67,16 @@ public class UserLoginAction extends ActionSupport implements SessionAware{
 		}
 		else{
 			this.result = UserLoginAction.LOGIN_FAIL;
+		}
+		return Action.SUCCESS;
+	}
+	
+	public String isUserLogin(){
+		if(this.session.get("SESSION_CURRENT_USER") != null){
+			this.result = "IS_LOGIN";
+		}
+		else {
+			this.result = "NOT_LOGIN";
 		}
 		return Action.SUCCESS;
 	}

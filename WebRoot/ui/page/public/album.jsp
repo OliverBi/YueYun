@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="Shortcut Icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
 	
 	<script src="ui/js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="ui/js/album.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -37,6 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  			<div class="albumInfoContainer">
 	  				<div class="albumInfoTitleContainer"><s:property value="album.albumName"/></div>
 	  				<div class="albumInfoPlayContainer"></div>
+	  				<input id="albumId" type="hidden" value="<s:property value='album.albumId'/>"/>
 	  				<div class="albumInfoContentContainer">
 	  					<span>歌手： <s:property value="album.albumArtist.artistName"/></span>
 	  					<span>语言： </span>
@@ -67,13 +69,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  				<div class="albumTracksTitleContainer"></div>
 	  				<div style="clear:both;"></div>
 	  				<div class="albumTracksListContainer">
-	  					<div class="listSelectAll">
+	  					<%-- <div class="listSelectAll">
 	  						<input id="selectAllTracks" type="checkbox"/>
 	  						<label for="selectAllTracks"><s:text name="selectAll"/></label> 
-	  					</div>
+	  					</div> --%>
 	  					<s:iterator value="albumTrackList" id="trackItem">
 	  						<div class="listItem">
-		  						<input type="checkbox"/>
+		  						<!-- input type="checkbox"/> -->
 		  						<div class="trackName">
 		  							<a href="public/track?track.trackId=<s:property value='trackId'/>">
 		  								<s:property value="trackName"/>
@@ -84,13 +86,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  								<s:property value="trackArtistString"/>
 		  							</a>
 		  						</div>
-		  						<div class="trackOption">
+		  						<%-- <div class="trackOption">
 		  							<a title="<s:text name='play'/>" class="play" href="#"></a>
 		  							<a title="<s:text name='add'/>" class="add" href="#"></a>
 		  							<a title="<s:text name='like'/>" class="like" href="#"></a>
 		  							<a title="<s:text name='store'/>" class="collect" href="#"></a>
 		  							<a title="<s:text name='share'/>" class="share" href="#"></a>
-		  						</div>
+		  						</div> --%>
 		  					</div>
 	  					</s:iterator>
 	  					<%-- Example 

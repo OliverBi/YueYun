@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+#friendPageBack {
+	background-color: #B3DF89;
+	background-attachment: scroll;
+	background-image: url(../img/home/body_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
+#friendPageContainer {
+	
+}
+
+#friendPageContentContainer
+{
+	background-color:#FFF;
+}
+
+#friendPageMainContentContainer
+{
+	float:left;
+	/*height:100%;*/
+	width:674px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #E6E6E6;
+}
+
+#friendPageSideContentContainer
+{
+	float:right;
+	width:285px;
+	/*height:100%;*/
+}

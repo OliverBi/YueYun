@@ -22,38 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<script src="ui/js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
 	<%-- <script src="ui/js/jquery/jquery-position.js" type="text/javascript"></script> --%>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			function HomeManager(){
-				this.init();
-			}
-			HomeManager.prototype.init = function(){
-				$("#homePageUserStatusContainer textarea").keyup(function(){
-					if($.trim($(this).val()).length > 0){
-						if($.trim($(this).val()).length <= 140){
-							$("#homePageUserStatusOptContainer input[type='button']").removeAttr("disabled");
-							$("#homePageUserStatusOptContainer input[type='button']").removeClass("homePageUserStatusPulishButtonDisabled").addClass("homePageUserStatusPulishButton");
-							var leftSize = 140;
-							leftSize = leftSize - $.trim($(this).val()).length;
-							$("#homePageUserStatusSizeContainer span").html("还可以输入" + leftSize + "字");
-						}else{
-							$("#homePageUserStatusOptContainer input[type='button']").attr("disabled","disabled");
-							$("#homePageUserStatusOptContainer input[type='button']").removeClass("homePageUserStatusPulishButton").addClass("homePageUserStatusPulishButtonDisabled");
-							var leftSize = 0;
-							$("#homePageUserStatusSizeContainer span").html("还可以输入" + leftSize + "字");
-						}
-					}else{
-						$("#homePageUserStatusOptContainer input[type='button']").attr("disabled","disabled");
-						$("#homePageUserStatusOptContainer input[type='button']").removeClass("homePageUserStatusPulishButton").addClass("homePageUserStatusPulishButtonDisabled");
-						var leftSize = 140;
-						$("#homePageUserStatusSizeContainer span").html("还可以输入" + leftSize + "字");
-					}
-				});
-			};
-			
-			var homeManager = new HomeManager();
-		});
-	</script>
+	<script src="ui/js/home.js" type="text/javascript"></script>
   </head>
   	
   <body>
@@ -69,51 +38,56 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			<div id="homePageHeaderContainer">
   				<div id="homePageMenuContainer">
   					<ul class="homePageMenuItems">
-  						<li class="homePageMenuItemOn"><a href="#"><s:text name="homePage" /></a></li>
-  						<li class="homePageMenuItem"><a href="#"><s:text name="collect" /></a></li>
-  						<li class="homePageMenuItem"><a href="#"><s:text name="store" /></a></li>
-  						<li class="homePageMenuItem"><a href="#"><s:text name="blog" /></a></li>
-  						<li class="homePageMenuItem"><a href="#"><s:text name="photoAlbum" /></a></li>
-  						<li class="homePageMenuItem"><a href="#"><s:text name="yueFriend" /></a></li>
-  						<li class="homePageMenuItem"><a href="#"><s:text name="message" /></a></li>
+  						<li class="homePageMenuItemOn"><a href="user/home"><s:text name="homePage" /></a></li>
+  						<%-- <li class="homePageMenuItem"><a href="#"><s:text name="collect" /></a></li> --%>
+  						<li class="homePageMenuItem"><a href="user/collect"><s:text name="store" /></a></li>
+  						<%-- <li class="homePageMenuItem"><a href="#"><s:text name="blog" /></a></li> --%>
+  						<%-- <li class="homePageMenuItem"><a href="#"><s:text name="photoAlbum" /></a></li> --%>
+  						<li class="homePageMenuItem"><a href="user/friend"><s:text name="yueFriend" /></a></li>
+  						<%-- <li class="homePageMenuItem"><a href="#"><s:text name="message" /></a></li> --%>
   					</ul>
   				</div>
   				<div id="homePageAvatarContainer">
   					<div class="homePageAvatar">
-  						<img src="ui/img/test/avatar_default_m.gif" />
+  						<!-- <img src="ui/img/test/avatar_default_m.gif" /> -->
+  						<img src='<s:property value="#session.SESSION_CURRENT_USER.userAvatarUrl"/>' />
   					</div>
   				</div>
   				<div id="homePageUserInfoContainer">
-  					<div class="homePageUserNameContainer">MYMMoonDT</div>
+  					<div class="homePageUserNameContainer"><s:property value="#session.SESSION_CURRENT_USER.userName"/></div>
   					<div class="homePageUserSocialContainer">
   						<ul>
   							<li>
   								<span><s:text name="follow"/></span>
-  								<a href="#">0</a>
+  								<a href="javascript:;">0</a>
   							</li>
   							<li>
   								<span>|</span>
   							</li>
   							<li>
   								<span><s:text name="fan"/></span>
-  								<a href="#">0</a>
+  								<a href="javascript:;">0</a>
   							</li>
   						</ul>
   					</div>
   				</div>
   				<div id="homePageUserStatusContainer">
-  					<form>
+  					<form id="statusForm">
 	  					<div id="homePageUserStatusSizeContainer">
 	  						<span><s:text name="canInput140Char" /></span>
 	  					</div>
 	  					<div>
-	  						<textarea></textarea>
+	  						<textarea id="statusContent" name="statusContent"></textarea>
 	  					</div>
 	  					<div id="homePageUserStatusOptContainer">
 	  						<input class="homePageUserStatusPulishButtonDisabled" 
 	  							type="button" 
 	  							value="<s:text name='publish'/>"
 	  							disabled="disabled"/>
+	  					</div>
+	  					<div id="homePageUserStatusSuccessContainer" style="display:none;">
+	  						<span class="successIcon"></span>
+	  						<span><s:text name="publicSuccessfully"/></span>
 	  					</div>
   					</form>
   				</div>
@@ -122,9 +96,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<div id="homePageMainContainer">
   					<div id="homePageStatusMenuContainer">
   						<div class="homePageStatusMenuItemOn">
-  							<a href="#"><s:text name="all"/></a>
+  							<a href="javascript:;"><s:text name="all"/></a>
   						</div>
-  						<div class="homePageStatusMenuItem">
+  						<%-- <div class="homePageStatusMenuItem">
   							<a href="#"><s:text name="collect"/></a>
   						</div>
   						<div class="homePageStatusMenuItem">
@@ -135,10 +109,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   						</div>
   						<div class="homePageStatusMenuItem">
   							<a href="#"><s:text name="blog"/></a>
-  						</div>
+  						</div> --%>
   					</div>
   					<div style="height:20px;clear:both;"></div>
-  					<div class="homePageStatusItemContainer">
+  					<s:iterator value="userAndFriendStatusList" id="status">
+  						<s:if test="#status.statusTypeStr == 'COMMON'">
+  							<div class="homePageStatusItemContainer">
+		  						<div class="homePageStatusAvatarContainer">
+		  							<a href="javascript:;">
+		  								<img src="<s:property value='statusUser.userAvatarUrl'/>"/>
+		  							</a>
+		  						</div>
+		  						<div class="homePageStatusContentContainer">
+		  							<a class="userName" href="javascript:;"><s:property value="statusUser.userName"/>:</a>
+		  							<span class="statusContent"><s:property value="statusContent"/></span>
+		  						</div>
+		  						<div class="homePageStatusBottomContainer">
+		  							<div class="statusTime"><s:date name="statusTime" format="yyyy-MM-dd HH:mm"/></div>
+		  						</div>
+		  					</div> 
+  						</s:if>
+  					</s:iterator>
+  					<%-- <div class="homePageStatusItemContainer">
   						<div class="homePageStatusAvatarContainer">
   							<a href="">
   								<img src="ui/img/test/avatar_default_m.gif"/>
@@ -151,8 +143,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   						<div class="homePageStatusBottomContainer">
   							<div class="statusTime">今天 12:30</div>
   						</div>
-  					</div>
-  					<div class="homePageStatusItemContainer">
+  					</div> --%>
+  					
+  					<%-- <div class="homePageStatusItemContainer">
   						<div class="homePageStatusAvatarContainer">
   							<a href="">
   								<img src="ui/img/test/avatar_default_m.gif"/>
@@ -165,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   						<div class="homePageStatusBottomContainer">
   							<div class="statusTime">今天 12:30</div>
   						</div>
-  					</div>
+  					</div> --%>
   					<div style="height:60px;">
   					</div>
   				</div>

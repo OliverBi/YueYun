@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+#userInfoContainer {
+	width:285px;
+	height:105px;
+}
+
+#userInfoContainer .userAvatarContainer {
+	float:left;
+	margin:10px;
+	border: 1px solid #666666;
+}
+
+#userInfoContainer .userAvatarContainer img {
+	width:80px;
+	height:80px;
+}
+
+#userInfoContainer .userNameContainer {
+	float:left;
+	clear:right;
+	width:165px;
+	font-size:14px;
+	font-weight:bold;
+	color: #6FA736;
+	margin:15px 0 0 0;
+}
+
+#userInfoContainer .userSocialContainer {
+	float:left;
+	margin-top:10px;
+}
+
+.userSocialContainer ul {
+	list-style:none;
+}
+
+.userSocialContainer li
+{
+	float:left;
+	margin-right:5px;
+	color:#666666;
+}
+
+.userSocialContainer li a
+{
+	color: #6FA736;
+}
+
+.userSocialContainer span
+{
+	display:block;
+}

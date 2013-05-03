@@ -40,7 +40,11 @@
 				<value>com/yueyun/dao/TbHotrecommendtrack.hbm.xml</value>
 				<value>com/yueyun/dao/TbNewalbum.hbm.xml</value>
 				<value>com/yueyun/dao/TbNewrecommendtrack.hbm.xml</value>
-				<value>com/yueyun/dao/TbTrackrank.hbm.xml</value></list>
+				<value>com/yueyun/dao/TbTrackrank.hbm.xml</value>
+				<value>com/yueyun/dao/TbTrackplaylist.hbm.xml</value>
+				<value>com/yueyun/dao/TbUserplaylist.hbm.xml</value>
+				<value>com/yueyun/dao/TbStatus.hbm.xml</value>
+				<value>com/yueyun/dao/TbRelation.hbm.xml</value></list>
 		</property>
 	</bean>
 	<bean id="transactionManager" 
@@ -66,6 +70,9 @@
 				<value>tbTrackService</value>
 				<value>tbAlbumService</value>
 				<value>tbArtistService</value>
+				<value>tbPlayService</value>
+				<value>tbStatusService</value>
+				<value>tbRelationService</value>
 			</list>
 		</property>
 		<property name="interceptorNames">
@@ -89,11 +96,30 @@
 			<ref bean="TbUserService" />
 		</property>
 	</bean>
-	<bean id="UserHomeAction" class="com.yueyun.action.UserHomeAction">
+	<bean id="UserPlayAjaxAction" class="com.yueyun.action.UserPlayAjaxAction" scope="prototype">
+		<property name="tbPlayService">
+			<ref bean="TbPlayService" />
+		</property>
+	</bean>
+	<bean id="UserStatusAction" class="com.yueyun.action.UserStatusAction" scope="prototype">
+		<property name="tbStatusService">
+			<ref bean="TbStatusService" />
+		</property>
+	</bean>
+	
+	<bean id="UserHomeAction" class="com.yueyun.action.UserHomeAction" scope="prototype">
+		<property name="tbStatusService">
+			<ref bean="TbStatusService" />
+		</property>
 	</bean>
 	<bean id="PublicIndexAction" class="com.yueyun.action.PublicIndexAction">
 		<property name="tbIndexService">
 			<ref bean="TbIndexService" />
+		</property>
+	</bean>
+	<bean id="UserPlayAction" class="com.yueyun.action.UserPlayAction" scope="prototype">
+		<property name="tbPlayService">
+			<ref bean="TbPlayService" />
 		</property>
 	</bean>
 	<bean id="PublicMusicAction" class="com.yueyun.action.PublicMusicAction">
@@ -187,6 +213,45 @@
 			<ref bean="TbAlbumService" />
 		</property>
 	</bean>
+	<bean id="TbPlayService" class="com.yueyun.service.TbPlayService">
+		<property name="tbTrackplaylistDAO">
+			<ref bean="TbTrackplaylistDAO" />
+		</property>
+		<property name="tbUserplaylistDAO">
+			<ref bean="TbUserplaylistDAO" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+	</bean>
+	<bean id="TbStatusService" class="com.yueyun.service.TbStatusService">
+		<property name="tbStatusDAO">
+			<ref bean="TbStatusDAO" />
+		</property>
+		<property name="tbUserService">
+			<ref bean="TbUserService" />
+		</property>
+		<property name="tbRelationService">
+			<ref bean="TbRelationService" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+	</bean>
+	<bean id="TbRelationService" class="com.yueyun.service.TbRelationService">
+		<property name="tbRelationDAO">
+			<ref bean="TbRelationDAO" />
+		</property>
+		<property name="tbUserService">
+			<ref bean="TbUserService" />
+		</property>
+	</bean>
 	
 	<!-- DAO Declare Create by Myeclipse -->
 	<bean id="TbUserDAO" class="com.yueyun.dao.TbUserDAO">
@@ -237,6 +302,28 @@
 		</property>
 	</bean>
 	<bean id="TbTrackrankDAO" class="com.yueyun.dao.TbTrackrankDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbTrackplaylistDAO"
+		class="com.yueyun.dao.TbTrackplaylistDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbUserplaylistDAO"
+		class="com.yueyun.dao.TbUserplaylistDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbStatusDAO" class="com.yueyun.dao.TbStatusDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbRelationDAO" class="com.yueyun.dao.TbRelationDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

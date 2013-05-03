@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   				},
 	   				submitHandler:function(form){
 	            		var loginInfo = $("#loginForm").serialize();
-		   				var actionUrl = "/YueYun/userAjax/userLoginAction";
+		   				var actionUrl = "/YueYun/userAjax/userLoginAction!userLoginCheck";
 		   				$.ajax({
 		   					url: actionUrl,
 		   					type: "POST",

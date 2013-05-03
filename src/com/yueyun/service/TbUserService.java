@@ -1,8 +1,11 @@
 package com.yueyun.service;
+import java.util.Date;
 import java.util.List;
 
 import com.yueyun.action.UserRegisterAction;
-import com.yueyun.dao.*;
+import com.yueyun.dao.TbUser;
+import com.yueyun.dao.TbUserDAO;
+import com.yueyun.domain.User;
 import com.yueyun.tool.SecurityPassword;
 
 
@@ -15,6 +18,22 @@ public class TbUserService{
 
 	public void setTbUserDAO(TbUserDAO tbUserDAO) {
 		this.tbUserDAO = tbUserDAO;
+	}
+	
+	public User getUserInfo(int userId){
+		User user = null;
+		TbUser tbUser = tbUserDAO.findById(userId);
+		if(tbUser != null){
+			user = new User();
+			user.setUserId(tbUser.getUserId());
+			user.setUserName(tbUser.getUserName());
+			user.setUserEmail(tbUser.getUserEmail());
+			user.setUserGender(tbUser.getUserGender());
+			user.setUserAvatarUrl(tbUser.getUserAvatarUrl());
+			user.setUserDescription(tbUser.getUserDescription());
+			user.setUserBirthday(tbUser.getUserBirthday());
+		}
+		return user;
 	}
 	
 	public TbUser checkLoginInfo(String userEmail, String userPassword){

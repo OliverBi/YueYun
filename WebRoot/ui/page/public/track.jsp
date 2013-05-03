@@ -23,6 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="Shortcut Icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
 	
 	<script src="ui/js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="ui/js/track.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -34,8 +35,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			<div class="trackPageLeftContainer">
   				<div class="trackTitleContainer"><s:property value="track.trackName"/></div>
   				<div class="trackPlayContainer">
-  					<a class="play" href="#" title="<s:text name='play'/>"></a>
-  					<a class="add" href="#" title="<s:text name='add'/>"></a>
+  					<a class="play" href="javascript:;" title="<s:text name='play'/>"></a>
+  					<a class="add" href="javascript:;" title="<s:text name='add'/>"></a>
+  					<input id="trackId" type="hidden" value="<s:property value='track.trackId'/>"/>
   				</div>
   				<div class="trackDetailContainer">
   					<span>歌手： <s:property value="track.trackArtistString"/></span>
@@ -61,33 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<div class="trackLyricContainer">
   					<div class="trackLyricTitle"><s:text name="lyric"/></div>
   					<div class="trackLyricContent">
-  						<span>
-  							<!-- 周杰伦 - 红尘客栈
-  							<br/>
-							作词：方文山
-							<br/>
-							作曲：周杰伦
-							<br/>
-							天涯 的尽头是风沙
-							<br/>
-							红尘 的故事叫牵挂
-							<br/>
-							封刀隐没在寻常人家 东篱下
-							<br/>
-							闲云 野鹤 古剎
-							<br/>
-							快马 在江湖里厮杀
-							<br/>
-							无非 是名跟利放不下
-							<br/>
-							心中有江山的人岂能快意潇洒
-							<br/>
-							我只求与妳共 华发
-							<br/>
-							剑出鞘 恩怨了 谁笑
-							<br/>
-							我只求今朝 拥妳入 怀抱 -->
-						</span>
+  						<span></span>
   					</div>
   				</div>
   			</div>
@@ -106,13 +82,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  								<s:property value="trackName"/>
 	  							</a>
 	  						</div>
-	  						<div class="trackOption">
+	  						<%-- <div class="trackOption">
 	  							<a title="<s:text name='play'/>" class="play" href="#"></a>
 	  							<a title="<s:text name='add'/>" class="add" href="#"></a>
 	  							<a title="<s:text name='like'/>" class="like" href="#"></a>
 	  							<a title="<s:text name='store'/>" class="collect" href="#"></a>
 	  							<a title="<s:text name='share'/>" class="share" href="#"></a>
-		  					</div>
+		  					</div> --%>
 	  					</div>
   					</s:iterator>
   					<%-- <!-- Test Track -->

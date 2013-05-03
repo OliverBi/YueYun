@@ -15,6 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
      <link type="text/css" href="ui/css/navBar.css" rel="stylesheet">
+     <script src="ui/js/navBar.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -40,6 +41,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					<a href="user/home"><s:text name="personalPage"/></a>
    				</div>
    			</s:else>
+   			<div class="navBarItemContainer">
+   				<a href="#"><s:text name="find"/></a>
+   			</div>
+   			<div class="navBarItemContainer" style="float:right;width:130px;">
+   				<a id="myMusicBox" href="javascript:;"><s:text name="myMusicBox"/></a>
+   			</div>
    		</div>
    	</div>
   </body>

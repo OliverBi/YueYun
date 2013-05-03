@@ -36,13 +36,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<div class="artistTracksContainer">
   					<div class="artistTracksTitle"></div>
   					<div class="artistTracksListContainer">
-  						<div class="listSelectAll">
+  						<%-- <div class="listSelectAll">
 	  						<input id="selectAllTracks" type="checkbox"/>
 	  						<label for="selectAllTracks"><s:text name="selectAll"/></label> 
-	  					</div>
+	  					</div> --%>
 	  					<s:iterator value="artistTrackList" id="track">
 	  						<div class="listItem">
-		  						<input type="checkbox"/>
+		  						<!-- <input type="checkbox"/> -->
 		  						<div class="trackName">
 		  							<a href="public/track?track.trackId=<s:property value='trackId'/>">
 		  								<s:property value="trackName"/>
@@ -53,13 +53,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  								<s:property value="trackAlbum.albumName"/>
 		  							</a>
 		  						</div>
-		  						<div class="trackOption">
+		  						<%-- <div class="trackOption">
 		  							<a title="<s:text name='play'/>" class="play" href="#"></a>
 		  							<a title="<s:text name='add'/>" class="add" href="#"></a>
 		  							<a title="<s:text name='like'/>" class="like" href="#"></a>
 		  							<a title="<s:text name='store'/>" class="collect" href="#"></a>
 		  							<a title="<s:text name='share'/>" class="share" href="#"></a>
-		  						</div>
+		  						</div> --%>
 	  						</div>
 	  					</s:iterator>
 	  					<%-- <!--Test Tracks-->

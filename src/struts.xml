@@ -6,7 +6,7 @@
 	<constant name="struts.devMode" value="true"/>
 	
 	<package name="userAjaxPackage" extends="json-default" namespace="/userAjax">
-		<action name="userLoginAction" class="UserLoginAction" method="userLoginCheck">
+		<action name="userLoginAction" class="UserLoginAction">
 			<result type="json"></result>
 		</action>
 		<!-- <action name="userRegisterFirstStepAction" class="UserRegisterAction" method="userRegisterCheck">
@@ -18,6 +18,12 @@
 		<action name="userRegisterAction" class="UserRegisterAction">
 			<result name="success" type="json"></result>
 		</action>
+		<action name="userPlayAjaxAction" class="UserPlayAjaxAction">
+			<result type="json"></result>
+		</action>
+		<action name="userStatusAjaxAction" class="UserStatusAction">
+			<result type="json"></result>
+		</action>
 	</package>
 	
 	<package name="userPackage" extends="struts-default" namespace="/user">
@@ -28,6 +34,15 @@
 				<param name="namespace">/user</param>
 			</result>
 		</action>
+		<action name="play" class="UserPlayAction">
+			<result type="redirectAction">
+				<param name="actionName">musicbox</param>
+			</result>
+		</action>
+		<action name="musicbox" class="UserPlayAction">
+			<result>/ui/page/user/play.jsp</result>
+		</action>
+		
 		<action name="login">
 			<result>/ui/page/user/login.jsp</result>
 		</action>
@@ -43,6 +58,12 @@
 				<param name="actionName">index</param>
 				<param name="namespace">/public</param>
 			</result>
+		</action>
+		<action name="friend">
+			<result>/ui/page/user/friend.jsp</result>
+		</action>
+		<action name="collect">
+			<result>/ui/page/user/collect.jsp</result>
 		</action>
 	</package>
 	<package name="publicPackage" extends="struts-default" namespace="/public">
