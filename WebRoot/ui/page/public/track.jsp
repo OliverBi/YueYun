@@ -23,6 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="Shortcut Icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
 	
 	<script src="ui/js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="ui/js/jquery/jquery.simplemodal.1.4.4.min.js" type="text/javascript"></script>
 	<script src="ui/js/track.js" type="text/javascript"></script>
   </head>
   
@@ -46,15 +47,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   					<span>唱片公司：</span>
   				</div>
   				<div class="trackOptionContainer">
-  					<a class="trackOptionItem like" href="#">
+  					<a class="trackOptionItem like" href="javascript:;">
   						<span class="likeImg"></span>
   						<span><s:text name="like"/></span>
   					</a>
-  					<a class="trackOptionItem store" href="#">
+  					<a class="trackOptionItem store" href="javascript:;">
   						<span class="storeImg"></span>
   						<span><s:text name="store"/></span>
   					</a>
-  					<a class="trackOptionItem share" href="#">
+  					<a class="trackOptionItem share" href="javascript:;">
   						<span class="shareImg"></span>
   						<span><s:text name="share"/></span>
   					</a>
@@ -109,6 +110,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			</div>
   			<div style="clear:both;height:100px;"></div>
   		</div>
+  		<div id="collectTrackDialogContainer">
+  			<form id="collectTrackForm">
+  				<input id="trackId" name="trackId" type="hidden" value="<s:property value='track.trackId'/>"/>
+  				<div class="collectTrackSuccessContainer">
+  					<span class="successIcon"></span>
+	  				<span><s:text name="collectTrackSuccessfully"/></span>
+  				</div>
+  			</form>
+  		</div>
+  		<div id="shareTrackDialogContainer">
+  			<form id="shareTrackForm">
+  				<input id="trackId" name="trackId" type="hidden" value="<s:property value='track.trackId'/>"/>
+	  			<div class="shareTrackDialogTitle"></div>
+	  			<div class="shareTrackStatusContainer">
+	  				<textarea id="statusContent" name="statusContent"></textarea>
+	  			</div>
+	  			<div class="shareTrackStatusSizeContainer">
+	  				<span><s:text name="140char" /></span>
+	  			</div>
+	  			<div style="clear:both;"></div>
+	  			<div class="shareTrackOptionContainer">
+	  				<a class="confirm" href="javascript:;"><s:text name="confirm"/></a>
+	  				<a class="cancel" href="javascript:;"><s:text name="cancel"/></a>
+	  			</div>
+	  			<div class="shareTrackSuccessContainer" style="display:none;">
+	  				<span class="successIcon"></span>
+	  				<span><s:text name="shareSuccessfully"/></span>
+	  			</div>
+  			</form>
+   		</div>
   	</div>
   	<s:include value="../../component/bottomSearchBar.jsp"></s:include>
    	<s:include value="../../component/backTop.jsp"></s:include>

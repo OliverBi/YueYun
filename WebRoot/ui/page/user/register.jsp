@@ -240,7 +240,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     						<div style="position:absolute;left:130px;top:5px;">
 	    						<div id="registerGenderErrorContainer"></div>
 	    						<div id="registerGenderContainer">
-	    							<input type="text" id="registerUser.userGender" name="registerUser.userGender" style="display:none;" value="F"/>
+	    							<input type="text" id="registerUser.userGender" name="registerUser.userGender" style="display:none;" value="M"/>
 	    							<div id="registerMaleContainer">
 	    								<div class="registerMaleImg"></div>
 	    								<div>

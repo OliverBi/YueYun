@@ -21,7 +21,7 @@
 #collectPageMainContentContainer
 {
 	float:left;
-	/*height:100%;*/
+	min-height:600px;
 	width:674px;
 	border-right-width: 1px;
 	border-right-style: solid;
@@ -33,4 +33,202 @@
 	float:right;
 	width:285px;
 	/*height:100%;*/
+}
+
+.etabs 
+{
+	list-style:none;
+}
+.tab 
+{ 
+	display:block;
+	float:left;
+}
+.tab a 
+{
+	font-size: 14px;
+	line-height:33px;
+	display: block;
+	color:#669900;
+	text-decoration: none;
+	background-attachment: scroll;
+	background-image: url(../img/common/nav_bg.png);
+	background-repeat: no-repeat;
+	background-position: left -99px;
+}
+
+.tab.active a
+{
+	color:#333333;
+	background-position: left -33px;
+}
+
+.tab a span
+{
+	padding:0 13px 0 18px;
+	background-attachment: scroll;
+	background-image: url(../img/common/nav_bg.png);
+	background-repeat: no-repeat;
+	background-position: left -66px;
+}
+
+.tab.active a span
+{
+	background-position: 0 0;
+}
+
+.tab-container
+{
+	margin:20px 0 0 30px;
+}
+
+.panel-container
+{
+	float:left;
+}
+
+#collectPageMenuContainer
+{
+	float:left;
+	margin: 10px 0 15px 5px;
+}
+
+#collectPageMenuContainer .collectPageMenuItemOn
+{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	background-color: #9FAB90;
+	float:left;
+}
+
+#collectPageMenuContainer .homePageStatusMenuItem
+{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	float:left;
+}
+
+.collectPageMenuItem a,
+.collectPageMenuItem a:hover
+{
+	color:#666666;
+	text-decoration:none;
+	display:block;
+}
+
+.collectPageMenuItemOn a,
+.collectPageMenuItemOn a:hover
+{
+	color:#FFF;
+	text-decoration:none;
+	display:block;
+}
+
+.collectTrackContainer
+{
+	width:300px;
+	float:left;
+	margin:10px 0;
+}
+
+.collectTrackContainer .collectTrackContent
+{
+	height: 30px;
+    line-height: 30px;
+}
+
+.collectTrackContainer .collectTrackTimeContainer
+{
+	padding:5px 0 0 33px;
+	color:#999999;
+}
+
+.collectTrackContent a
+{
+	color: #669900;
+}
+
+.collectTrackContent .playIcon
+{
+	background-image: url("../img/home/home_icon.png");
+    background-position: 0 -93px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    margin-right: 5px;
+    width: 30px;
+}
+
+.collectTrackContent span
+{
+	
+}
+
+.collectAlbumContainer 
+{
+	float:left;
+	margin:10px 0;
+	width:500px;
+}
+
+.collectAlbumContainer .collectAlbumImgContainer
+{
+	width:100px;
+	height:100px;
+	background-image: url(../img/collect/album_bg.png);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	padding: 7px 6px 14px 17px;
+	float:left;
+}
+
+.collectAlbumImgContainer img
+{
+	width:100px;
+	height:100px;
+}
+
+.collectAlbumContainer .collectAlbumContentContainer
+{
+	float:left;
+	clear:right;
+	line-height:30px;
+	margin:10px 0 0 10px;
+}
+
+.collectAlbumContentContainer .playIcon
+{
+	background-image: url("../img/home/home_icon.png");
+    background-position: 0 -93px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    margin-right: 5px;
+    width: 30px;
+	clear:both;
+}
+
+.collectAlbumContentContainer a
+{
+	color: #669900;
+}
+
+.collectAlbumContentContainer span
+{
+	float:left;
+}
+
+.collectAlbumContainer .collectAlbumTimeContainer
+{
+	color:#999999;
+	float:left;
+	clear:both;
+	margin-top:10px;
 }

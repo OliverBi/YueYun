@@ -1,16 +1,21 @@
 package com.yueyun.service;
-import java.util.Date;
 import java.util.List;
 
 import com.yueyun.action.UserRegisterAction;
 import com.yueyun.dao.TbUser;
 import com.yueyun.dao.TbUserDAO;
+import com.yueyun.dao.TbUserplaylist;
+import com.yueyun.dao.TbUserplaylistDAO;
 import com.yueyun.domain.User;
 import com.yueyun.tool.SecurityPassword;
 
 
 public class TbUserService{
+	public static final String DEFAULT_PLAY_LIST = "默认列表";
+	
 	private TbUserDAO tbUserDAO;
+	
+	private TbUserplaylistDAO tbUserplaylistDAO;
 
 	public TbUserDAO getTbUserDAO() {
 		return tbUserDAO;
@@ -18,6 +23,14 @@ public class TbUserService{
 
 	public void setTbUserDAO(TbUserDAO tbUserDAO) {
 		this.tbUserDAO = tbUserDAO;
+	}
+	
+	public TbUserplaylistDAO getTbUserplaylistDAO() {
+		return tbUserplaylistDAO;
+	}
+
+	public void setTbUserplaylistDAO(TbUserplaylistDAO tbUserplaylistDAO) {
+		this.tbUserplaylistDAO = tbUserplaylistDAO;
 	}
 	
 	public User getUserInfo(int userId){
@@ -76,6 +89,12 @@ public class TbUserService{
 		if(userList.size() == 1){
 			tbUser = userList.get(0);
 		}
+		
+		TbUserplaylist tbUserPlayListItem = new TbUserplaylist();
+		tbUserPlayListItem.setUserId(tbUser.getUserId());
+		tbUserPlayListItem.setUserPlayListName(DEFAULT_PLAY_LIST);
+		tbUserplaylistDAO.save(tbUserPlayListItem);
+		
 		return tbUser;
 	}
 }

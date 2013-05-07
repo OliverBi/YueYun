@@ -51,6 +51,26 @@ public class UserStatusAction extends ActionSupport implements SessionAware{
 		return Action.SUCCESS;
 	}
 	
+	public String shareTrackStatus(){
+		User currentUser = (User)this.session.get("SESSION_CURRENT_USER");
+		status = tbStatusService.addShareTrackStatus(currentUser.getUserId(), statusContent, Integer.parseInt(trackId));
+		if(status != null)
+			result = PUBLISH_SUCCESS;
+		else
+			result = PUBLISH_FAIL;
+		return Action.SUCCESS;
+	}
+	
+	public String shareAlbumStatus(){
+		User currentUser = (User)this.session.get("SESSION_CURRENT_USER");
+		status = tbStatusService.addShareAlbumStatus(currentUser.getUserId(), statusContent, Integer.parseInt(albumId));
+		if(status != null)
+			result = PUBLISH_SUCCESS;
+		else
+			result = PUBLISH_FAIL;
+		return Action.SUCCESS;
+	}
+	
 	public String getTrackId() {
 		return trackId;
 	}

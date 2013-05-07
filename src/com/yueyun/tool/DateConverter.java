@@ -10,6 +10,7 @@ import org.apache.struts2.util.StrutsTypeConverter;
 public class DateConverter extends StrutsTypeConverter {
 	private static final String FORMATDATE = "yyyy-MM-dd";
 	private static final String FORMATTIME = "yyyy-MM-dd HH:mm:ss";
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		if (values == null || values.length == 0) {
@@ -36,6 +37,7 @@ public class DateConverter extends StrutsTypeConverter {
 		return date;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public String convertToString(Map context, Object o) {
 		if (o instanceof Date) {

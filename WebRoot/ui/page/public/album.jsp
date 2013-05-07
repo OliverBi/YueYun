@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="Shortcut Icon" href="ui/img/icon/yueyun_logo.ico" type="image/x-icon"/>
 	
 	<script src="ui/js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="ui/js/jquery/jquery.simplemodal.1.4.4.min.js" type="text/javascript"></script>
 	<script src="ui/js/album.js" type="text/javascript"></script>
   </head>
   
@@ -153,6 +154,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			</div>
   			<div style="clear:both;height:100px;"></div>
   		</div>
+  		<div id="collectAlbumDialogContainer">
+  			<form id="collectAlbumForm">
+  				<input id="albumId" name="albumId" type="hidden" value="<s:property value='album.albumId'/>"/>
+  				<div class="collectAlbumSuccessContainer">
+  					<span class="successIcon"></span>
+	  				<span><s:text name="collectAlbumSuccessfully"/></span>
+  				</div>
+  			</form>
+  		</div>
+  		<div id="shareAlbumDialogContainer">
+  			<form id="shareAlbumForm">
+  				<input id="albumId" name="albumId" type="hidden" value="<s:property value='album.albumId'/>"/>
+	  			<div class="shareAlbumDialogTitle"></div>
+	  			<div class="shareAlbumStatusContainer">
+	  				<textarea id="statusContent" name="statusContent"></textarea>
+	  			</div>
+	  			<div class="shareAlbumStatusSizeContainer">
+	  				<span><s:text name="140char" /></span>
+	  			</div>
+	  			<div style="clear:both;"></div>
+	  			<div class="shareAlbumOptionContainer">
+	  				<a class="confirm" href="javascript:;"><s:text name="confirm"/></a>
+	  				<a class="cancel" href="javascript:;"><s:text name="cancel"/></a>
+	  			</div>
+	  			<div class="shareAlbumSuccessContainer" style="display:none;">
+	  				<span class="successIcon"></span>
+	  				<span><s:text name="shareSuccessfully"/></span>
+	  			</div>
+  			</form>
+   		</div>
   	</div>
   	<s:include value="../../component/bottomSearchBar.jsp"></s:include>
    	<s:include value="../../component/backTop.jsp"></s:include>

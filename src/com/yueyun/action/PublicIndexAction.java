@@ -11,10 +11,7 @@ import com.yueyun.domain.Album;
 import com.yueyun.domain.Artist;
 import com.yueyun.domain.Track;
 import com.yueyun.domain.User;
-import com.yueyun.service.TbAlbumService;
-import com.yueyun.service.TbArtistService;
 import com.yueyun.service.TbIndexService;
-import com.yueyun.service.TbTrackService;
 
 @SuppressWarnings("serial")
 public class PublicIndexAction extends ActionSupport implements SessionAware{
@@ -30,14 +27,14 @@ public class PublicIndexAction extends ActionSupport implements SessionAware{
 	
 	public String execute(){
 		//Login Auto
-		User user = new User();
+		/*User user = new User();
 		user.setUserId(1);
 		user.setUserEmail("bixiaodong1990@163.com");
 		user.setUserName("毕晓东");
 		user.setUserGender("M");
 		user.setUserAvatarUrl("img/avatar/1/avatar.jpg");
 		
-		session.put("SESSION_CURRENT_USER", user);
+		session.put("SESSION_CURRENT_USER", user);*/
 		
 		newAlbumList = tbIndexService.getNewAlbumList();
 		newRecTrackList = tbIndexService.getNewRecTrackList();

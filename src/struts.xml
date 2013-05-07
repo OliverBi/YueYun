@@ -24,6 +24,12 @@
 		<action name="userStatusAjaxAction" class="UserStatusAction">
 			<result type="json"></result>
 		</action>
+		<action name="userCollectAjaxAction" class="UserCollectAjaxAction">
+			<result type="json"></result>
+		</action>
+		<action name="userFriendAjaxAction" class="UserFriendAjaxAction">
+			<result type="json"></result>
+		</action>
 	</package>
 	
 	<package name="userPackage" extends="struts-default" namespace="/user">
@@ -59,10 +65,10 @@
 				<param name="namespace">/public</param>
 			</result>
 		</action>
-		<action name="friend">
+		<action name="friend" class="UserFriendAction">
 			<result>/ui/page/user/friend.jsp</result>
 		</action>
-		<action name="collect">
+		<action name="collect" class="UserCollectAction">
 			<result>/ui/page/user/collect.jsp</result>
 		</action>
 	</package>

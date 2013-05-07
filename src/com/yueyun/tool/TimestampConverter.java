@@ -10,6 +10,7 @@ import org.apache.struts2.util.StrutsTypeConverter;
 public class TimestampConverter extends StrutsTypeConverter{
 	private static final String FORMATDATE = "yyyy-MM-dd";
 	
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		if (values == null || values.length == 0) {
@@ -28,6 +29,7 @@ public class TimestampConverter extends StrutsTypeConverter{
 		return timestamp;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public String convertToString(Map context, Object o) {
 		if(o instanceof Timestamp){

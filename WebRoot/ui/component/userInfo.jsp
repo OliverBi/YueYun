@@ -22,14 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul>
 				<li>
 					<span><s:text name="follow"/></span>
-					<a href="javascript:;">0</a>
+					<a href="javascript:;"><s:property value="#session.SESSION_CURRENT_USER.userFollowNum"/></a>
 				</li>
 				<li>
 					<span>|</span>
 				</li>
 				<li>
 					<span><s:text name="fan"/></span>
-					<a href="javascript:;">0</a>
+					<a href="javascript:;"><s:property value="#session.SESSION_CURRENT_USER.userFanNum"/></a>
 				</li>
 			</ul>
 		</div>

@@ -22,6 +22,7 @@
 {
 	float:left;
 	/*height:100%;*/
+	min-height:600px;
 	width:674px;
 	border-right-width: 1px;
 	border-right-style: solid;
@@ -33,4 +34,224 @@
 	float:right;
 	width:285px;
 	/*height:100%;*/
+}
+
+/*Copy from collect.css Start*/
+.etabs 
+{
+	list-style:none;
+}
+.tab 
+{ 
+	display:block;
+	float:left;
+}
+.tab a 
+{
+	font-size: 14px;
+	line-height:33px;
+	display: block;
+	color:#669900;
+	text-decoration: none;
+	background-attachment: scroll;
+	background-image: url(../img/common/nav_bg.png);
+	background-repeat: no-repeat;
+	background-position: left -99px;
+}
+
+.tab.active a
+{
+	color:#333333;
+	background-position: left -33px;
+}
+
+.tab a span
+{
+	padding:0 13px 0 18px;
+	background-attachment: scroll;
+	background-image: url(../img/common/nav_bg.png);
+	background-repeat: no-repeat;
+	background-position: left -66px;
+}
+
+.tab.active a span
+{
+	background-position: 0 0;
+}
+
+.tab-container
+{
+	margin:20px 0 0 30px;
+}
+
+.panel-container
+{
+	float:left;
+}
+
+#friendPageMenuContainer
+{
+	float:left;
+	margin: 10px 0 15px 5px;
+}
+
+#friendPageMenuContainer .friendPageMenuItemOn
+{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	background-color: #9FAB90;
+	float:left;
+}
+
+#friendPageMenuContainer .friendPageMenuItem
+{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	float:left;
+}
+
+.friendPageMenuItem a,
+.friendPageMenuItem a:hover
+{
+	color:#666666;
+	text-decoration:none;
+	display:block;
+}
+
+.friendPageMenuItemOn a,
+.friendPageMenuItemOn a:hover
+{
+	color:#FFF;
+	text-decoration:none;
+	display:block;
+}
+/*Copy from collect.css End*/
+
+.friendContainer
+{
+	width:620px;
+	height:120px;
+	padding-top:20px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EDEDED;
+}
+
+.friendContainer .friendImgContainer
+{
+	float:left;
+	margin: 0 10px;
+	border: 1px solid #666666;
+}
+
+.friendImgContainer img
+{
+	width:80px;
+	height:80px;
+}
+
+.friendContainer .friendInfoContainer
+{
+	float:left;
+	color:#666666;
+	line-height:20px;
+	width:420px;
+}
+
+.friendInfoContainer .friendNameContainer
+{
+	color:#669900;
+	font-size:14px;
+	line-height:20px;
+}
+
+.friendInfoContainer .friendGenderContainer
+{
+	margin: 5px 0;
+}
+
+.friendGenderContainer .male
+{
+	width:12px;
+	height:12px;
+	background-attachment: scroll;
+	background-image: url(../img/icon/icon.png);
+	background-repeat: no-repeat;
+	background-position: -300px 0px;
+	display:block;
+}
+
+.friendGenderContainer .female
+{
+	width:12px;
+	height:12px;
+	background-attachment: scroll;
+	background-image: url(../img/icon/icon.png);
+	background-repeat: no-repeat;
+	background-position: -300px -25px;
+	display:block;
+}
+
+
+.friendContainer .friendOptionContainer
+{
+	float:right;
+}
+
+.friendOptionContainer .follow
+{
+	background-attachment: scroll;
+	background-image: url(../img/home/ico_home.png);
+	background-repeat: no-repeat;
+	background-position: right -153px;
+	color: #666666;
+	width:54px;
+	height:20px;
+	padding-left: 26px;
+	line-height:20px;
+	display:block;
+	text-decoration:none;
+}
+
+.friendOptionContainer .follow:hover
+{
+	background-position: right -176px;
+	color: #669900;
+	text-decoration:none;
+}
+
+.friendOptionContainer .followed,
+.friendOptionContainer .followed:hover
+{
+	background-attachment: scroll;
+	background-image: url(../img/home/ico_home.png);
+	background-repeat: no-repeat;
+	background-position: -520px -330px;
+	color: #666666;
+	width:54px;
+	height:20px;
+	padding-left: 26px;
+	line-height:20px;
+	display:block;
+	text-decoration:none;
+}
+
+.friendOptionContainer .followBoth,
+.friendOptionContainer .followBoth:hover
+{
+	background-attachment: scroll;
+	background-image: url(../img/home/ico_home.png);
+	background-repeat: no-repeat;
+	background-position: -520px -354px;
+	color: #666666;
+	width:54px;
+	height:20px;
+	padding-left: 26px;
+	line-height:20px;
+	display:block;
+	text-decoration:none;
 }

@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.yueyun.dao.TbStatus;
 import com.yueyun.dao.TbStatusDAO;
+import com.yueyun.domain.Friend;
 import com.yueyun.domain.Status;
 import com.yueyun.domain.StatusType;
 import com.yueyun.domain.User;
@@ -42,6 +43,48 @@ public class TbStatusService {
 		status.setStatusUser(tbUserService.getUserInfo(tbStatus.getUserId()));
 		status.setStatusType(StatusType.valueOf(tbStatus.getStatusType()));
 		status.setStatusTime(tbStatus.getStatusTime());
+		
+		return status;
+	}
+	
+	public Status addShareTrackStatus(int userId, String statusContent, int trackId){
+		TbStatus tbStatus = new TbStatus();
+		tbStatus.setUserId(userId);
+		tbStatus.setStatusContent(statusContent);
+		tbStatus.setStatusType(StatusType.SHARE_TRACK.toString());
+		Date currentTime = new Date();
+		tbStatus.setStatusTime(new Timestamp(currentTime.getTime()));
+		tbStatus.setShareTrackId(trackId);
+		tbStatusDAO.save(tbStatus);
+		
+		Status status = new Status();
+		status.setStatusId(tbStatus.getUserId());
+		status.setStatusContent(tbStatus.getStatusContent());
+		status.setStatusUser(tbUserService.getUserInfo(tbStatus.getUserId()));
+		status.setStatusType(StatusType.valueOf(tbStatus.getStatusType()));
+		status.setStatusTime(tbStatus.getStatusTime());
+		status.setShareTrack(tbTrackService.getTrackInfo(tbStatus.getShareTrackId()));
+		
+		return status;
+	}
+	
+	public Status addShareAlbumStatus(int userId, String statusContent, int albumId){
+		TbStatus tbStatus = new TbStatus();
+		tbStatus.setUserId(userId);
+		tbStatus.setStatusContent(statusContent);
+		tbStatus.setStatusType(StatusType.SHARE_ALBUM.toString());
+		Date currentTime = new Date();
+		tbStatus.setStatusTime(new Timestamp(currentTime.getTime()));
+		tbStatus.setShareAlbumId(albumId);
+		tbStatusDAO.save(tbStatus);
+		
+		Status status = new Status();
+		status.setStatusId(tbStatus.getUserId());
+		status.setStatusContent(tbStatus.getStatusContent());
+		status.setStatusUser(tbUserService.getUserInfo(tbStatus.getUserId()));
+		status.setStatusType(StatusType.valueOf(tbStatus.getStatusType()));
+		status.setStatusTime(tbStatus.getStatusTime());
+		status.setShareAlbum(tbAlbumService.getAlbumInfo(tbStatus.getShareAlbumId()));
 		
 		return status;
 	}
@@ -81,10 +124,10 @@ public class TbStatusService {
 				userAndFriendStatusList.add(status);
 			}
 		}
-		List<User> userFriendList = tbRelationService.getUserFriend(userId);
+		List<Friend> userFriendList = tbRelationService.getUserFriend(userId);
 		if(userFriendList != null){
-			for(User user : userFriendList){
-				List<Status> friendStatusList = getUserStatus(user.getUserId());
+			for(Friend friend : userFriendList){
+				List<Status> friendStatusList = getUserStatus(friend.getFriend().getUserId());
 				if(friendStatusList != null){
 					if(userAndFriendStatusList == null)
 						userAndFriendStatusList = new ArrayList<Status>();
@@ -94,7 +137,8 @@ public class TbStatusService {
 				}
 			}
 		}
-		Collections.sort(userAndFriendStatusList);
+		if(userAndFriendStatusList != null)
+			Collections.sort(userAndFriendStatusList);
 		return userAndFriendStatusList;
 	}
 	

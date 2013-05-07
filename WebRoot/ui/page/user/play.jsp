@@ -100,7 +100,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</div>
     			<div id="jpPlayListRightContainer">
     				<div id="albumImgContainer">
-    					<img src=""/>
+    					<img src="ui/img/play/album_bg.jpg"/>
     				</div>
     				<div id="albumTitleContainer">
     					<!-- 11月的肖邦 -->

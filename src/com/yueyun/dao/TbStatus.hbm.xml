@@ -14,7 +14,7 @@
             <column name="userId" not-null="true" />
         </property>
         <property name="statusType" type="java.lang.String">
-            <column name="statusType" length="10" not-null="true" />
+            <column name="statusType" length="64" not-null="true" />
         </property>
         <property name="statusContent" type="java.lang.String">
             <column name="statusContent" not-null="true" />

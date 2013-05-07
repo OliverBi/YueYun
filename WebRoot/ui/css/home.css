@@ -136,6 +136,7 @@
 	position:absolute;
 	left:0;
 	top:110px;
+	z-index: 10;
 }
 
 #homePageUserInfoContainer .homePageUserNameContainer
@@ -390,6 +391,60 @@
 {
 	height:26px;
 	line-height:26px;
+}
+
+.homePageStatusItemContainer .homePageStatusShareTrackContainer
+{
+	padding: 0 20px 7px 80px;
+	height: 30px;
+	line-height:30px;
+}
+
+.homePageStatusShareTrackContainer a {
+	color:#690;
+}
+
+.homePageStatusShareTrackContainer .playIcon,
+.homePageStatusShareAlbumContainer .playIcon
+{
+	background-position: 0 -93px;
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+	height: 30px;
+	width: 30px;
+	background-image: url(../img/home/home_icon.png);
+	margin-right:5px;
+}
+
+.homePageStatusItemContainer .homePageStatusShareAlbumContainer
+{
+	padding: 0 20px 7px 80px;
+	height: 90px;
+	line-height:30px;
+}
+
+.homePageStatusShareAlbumContainer a
+{
+	color:#690;
+	float:left;
+}
+
+.homePageStatusShareAlbumContainer span
+{
+	display:block;
+}
+
+.homePageStatusShareAlbumContainer .albumImg
+{
+	float:left;
+	margin-right:10px;
+}
+
+.homePageStatusShareAlbumContainer .albumImg img
+{
+	width:86px;
+	height:86px;
 }
 
 .homePageStatusBottomContainer .statusTime

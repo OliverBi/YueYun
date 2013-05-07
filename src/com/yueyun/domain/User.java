@@ -10,6 +10,8 @@ public class User {
 	private String userGender;
 	private String userDescription;
 	private String userAvatarUrl;
+	private Integer userFollowNum;
+	private Integer userFanNum;
 	public Integer getUserId() {
 		return userId;
 	}
@@ -51,5 +53,17 @@ public class User {
 	}
 	public void setUserAvatarUrl(String userAvatarUrl) {
 		this.userAvatarUrl = userAvatarUrl;
+	}
+	public Integer getUserFollowNum() {
+		return userFollowNum;
+	}
+	public void setUserFollowNum(Integer userFollowNum) {
+		this.userFollowNum = userFollowNum;
+	}
+	public Integer getUserFanNum() {
+		return userFanNum;
+	}
+	public void setUserFanNum(Integer userFanNum) {
+		this.userFanNum = userFanNum;
 	} 
 }
