@@ -20,7 +20,7 @@ public class UserHomeAction extends ActionSupport implements SessionAware{
 	private TbRelationService tbRelationService;
 	
 	public String userLoginCheck(){
-		if(session.get("SESSION_CURRENT_USER") != null){
+		/*if(session.get("SESSION_CURRENT_USER") != null){
 			User currentUser = (User)session.get("SESSION_CURRENT_USER");
 			currentUser.setUserFollowNum(tbRelationService.getUserFriendNum(currentUser.getUserId()));
 			currentUser.setUserFanNum(tbRelationService.getFriendUserNum(currentUser.getUserId()));
@@ -29,7 +29,13 @@ public class UserHomeAction extends ActionSupport implements SessionAware{
 			return Action.SUCCESS;
 		}
 		else
-			return Action.LOGIN;
+			return Action.LOGIN;*/
+		User currentUser = (User)session.get("SESSION_CURRENT_USER");
+		currentUser.setUserFollowNum(tbRelationService.getUserFriendNum(currentUser.getUserId()));
+		currentUser.setUserFanNum(tbRelationService.getFriendUserNum(currentUser.getUserId()));
+		session.put("SESSION_CURRENT_USER", currentUser);
+		userAndFriendStatusList = tbStatusService.getUserAndFriendStatus(currentUser.getUserId());
+		return Action.SUCCESS;
 	}
 
 	@Override

@@ -45,7 +45,13 @@
 				<value>com/yueyun/dao/TbUserplaylist.hbm.xml</value>
 				<value>com/yueyun/dao/TbStatus.hbm.xml</value>
 				<value>com/yueyun/dao/TbRelation.hbm.xml</value>
-				<value>com/yueyun/dao/TbCollect.hbm.xml</value></list>
+				<value>com/yueyun/dao/TbCollect.hbm.xml</value>
+				<value>
+					com/yueyun/dao/TbTrackNopreference.hbm.xml
+				</value>
+				<value>
+					com/yueyun/dao/TbAlbumNopreference.hbm.xml
+				</value></list>
 		</property>
 	</bean>
 	<bean id="transactionManager" 
@@ -75,6 +81,7 @@
 				<value>tbStatusService</value>
 				<value>tbRelationService</value>
 				<value>tbCollectService</value>
+				<value>tbFindService</value>
 			</list>
 		</property>
 		<property name="interceptorNames">
@@ -102,6 +109,9 @@
 		<property name="tbPlayService">
 			<ref bean="TbPlayService" />
 		</property>
+		<property name="tbFindService">
+			<ref bean="TbFindService" />
+		</property>
 	</bean>
 	<bean id="UserStatusAction" class="com.yueyun.action.UserStatusAction" scope="prototype">
 		<property name="tbStatusService">
@@ -128,6 +138,9 @@
 			<ref bean="TbRelationService" />
 		</property>
 	</bean>
+	<bean id="UserFindAction" class="com.yueyun.action.UserFindAction" scope="prototype">
+		
+	</bean>
 	<bean id="UserCollectAction" class="com.yueyun.action.UserCollectAction" scope="prototype">
 		<property name="tbCollectService">
 			<ref bean="TbCollectService" />
@@ -147,6 +160,9 @@
 		<property name="tbPlayService">
 			<ref bean="TbPlayService" />
 		</property>
+		<property name="tbFindService">
+			<ref bean="TbFindService" />
+		</property>
 	</bean>
 	<bean id="PublicMusicAction" class="com.yueyun.action.PublicMusicAction">
 		<property name="tbTrackService">
@@ -161,6 +177,13 @@
 	</bean>
 	<bean id="VerifyCodeImageAction" class="com.yueyun.action.VerifyCodeImageAction">
 	</bean>
+	
+	<!-- Interceptor Declare -->
+	<!-- <bean id="MusicPlayLogInterceptor" class="com.yueyun.interceptor.MusicPlayLogInterceptor">
+		<property name="tbFindService">
+			<ref bean="TbFindService" />
+		</property>
+	</bean> -->
 	
 	<!-- Service Declare -->
 	<bean id="TbUserService" class="com.yueyun.service.TbUserService">
@@ -295,6 +318,14 @@
 			<ref bean="TbUserService" />
 		</property>
 	</bean>
+	<bean id="TbFindService" class="com.yueyun.service.TbFindService">
+		<property name="tbTrackNopreferenceDAO">
+			<ref bean="TbTrackNopreferenceDAO" />
+		</property>
+		<property name="tbAlbumNopreferenceDAO">
+			<ref bean="TbAlbumNopreferenceDAO" />
+		</property>
+	</bean>
 	
 	
 	<!-- DAO Declare Create by Myeclipse -->
@@ -373,6 +404,18 @@
 		</property>
 	</bean>
 	<bean id="TbCollectDAO" class="com.yueyun.dao.TbCollectDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbTrackNopreferenceDAO"
+		class="com.yueyun.dao.TbTrackNopreferenceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TbAlbumNopreferenceDAO"
+		class="com.yueyun.dao.TbAlbumNopreferenceDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

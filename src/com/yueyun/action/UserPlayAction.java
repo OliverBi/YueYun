@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.yueyun.domain.Track;
 import com.yueyun.domain.User;
+import com.yueyun.service.TbFindService;
 import com.yueyun.service.TbPlayService;
 
 @SuppressWarnings("serial")
@@ -24,6 +25,7 @@ public class UserPlayAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	
 	private TbPlayService tbPlayService;
+	private TbFindService tbFindService;
 	
 	private List<Track> userDefaultPlayList;
 	
@@ -59,8 +61,10 @@ public class UserPlayAction extends ActionSupport implements SessionAware{
 		
 		if(trackId != null){
 			tbPlayService.addTrackToUserDefaultPlayList(currentUser.getUserId(), Integer.parseInt(trackId));
+			tbFindService.addTrackPlayLog(currentUser.getUserId(), Integer.parseInt(trackId));
 		}else if(albumId != null){
 			tbPlayService.addAlbumToUserDefaultPlayList(currentUser.getUserId(), Integer.parseInt(albumId));
+			tbFindService.addAlbumPlayLog(currentUser.getUserId(), Integer.parseInt(albumId));
 		}else{
 			this.userDefaultPlayList = tbPlayService.getUserDefaultPlayList(currentUser.getUserId());
 			if(this.userDefaultPlayList != null){	
@@ -118,6 +122,14 @@ public class UserPlayAction extends ActionSupport implements SessionAware{
 
 	public void setUserDefaultPlayListJsonStr(String userDefaultPlayListJsonStr) {
 		this.userDefaultPlayListJsonStr = userDefaultPlayListJsonStr;
+	}
+
+	public TbFindService getTbFindService() {
+		return tbFindService;
+	}
+
+	public void setTbFindService(TbFindService tbFindService) {
+		this.tbFindService = tbFindService;
 	}
 
 }

@@ -41,9 +41,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					<a href="user/home"><s:text name="personalPage"/></a>
    				</div>
    			</s:else>
-   			<div class="navBarItemContainer">
-   				<a href="#"><s:text name="find"/></a>
-   			</div>
+   			<s:if test="navItem == 'findPage'">
+	   			<div class="navBarItemContainerOn">
+	   				<a href="user/find"><s:text name="find"/></a>
+	   			</div>
+   			</s:if>
+   			<s:else>
+   				<div class="navBarItemContainer">
+	   				<a href="user/find"><s:text name="find"/></a>
+	   			</div>
+   			</s:else>
    			<div class="navBarItemContainer" style="float:right;width:130px;">
    				<a id="myMusicBox" href="javascript:;"><s:text name="myMusicBox"/></a>
    			</div>

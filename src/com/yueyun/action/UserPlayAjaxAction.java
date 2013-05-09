@@ -13,6 +13,7 @@ import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.yueyun.domain.Track;
 import com.yueyun.domain.User;
+import com.yueyun.service.TbFindService;
 import com.yueyun.service.TbPlayService;
 
 @SuppressWarnings("serial")
@@ -32,6 +33,7 @@ public class UserPlayAjaxAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	
 	private TbPlayService tbPlayService;
+	private TbFindService tbFindService;
 	
 	public String getTrackId() {
 		return trackId;
@@ -56,6 +58,7 @@ public class UserPlayAjaxAction extends ActionSupport implements SessionAware{
 		User currentUser = (User)this.session.get("SESSION_CURRENT_USER");
 		if(trackId != null){
 			track = tbPlayService.addTrackToUserDefaultPlayList(currentUser.getUserId(), Integer.parseInt(trackId));
+			tbFindService.addTrackPlayLog(currentUser.getUserId(), Integer.parseInt(trackId));
 			if(track != null){
 				result = "SUCCESS_ADD_PLAYLIST";
 				trackJson = new JSONObject();
@@ -70,6 +73,7 @@ public class UserPlayAjaxAction extends ActionSupport implements SessionAware{
 			}
 		}else if(albumId != null){
 			album = tbPlayService.addAlbumToUserDefaultPlayList(currentUser.getUserId(), Integer.parseInt(albumId));
+			tbFindService.addAlbumPlayLog(currentUser.getUserId(), Integer.parseInt(albumId));
 			if(album != null){
 				result = "SUCCESS_ADD_PLAYLIST";
 				albumJson = new JSONObject();
@@ -133,5 +137,13 @@ public class UserPlayAjaxAction extends ActionSupport implements SessionAware{
 	}
 	public void setAlbumJson(JSONObject albumJson) {
 		this.albumJson = albumJson;
+	}
+	@JSON(serialize=false)
+	public TbFindService getTbFindService() {
+		return tbFindService;
+	}
+	@JSON(serialize=false)
+	public void setTbFindService(TbFindService tbFindService) {
+		this.tbFindService = tbFindService;
 	}
 }

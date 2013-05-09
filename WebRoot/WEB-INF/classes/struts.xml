@@ -6,6 +6,10 @@
 	<constant name="struts.devMode" value="true"/>
 	
 	<package name="userAjaxPackage" extends="json-default" namespace="/userAjax">
+		<interceptors>
+			<interceptor name="MusicPlayLogInterceptor" class="com.yueyun.interceptor.MusicPlayLogInterceptor"></interceptor>
+		</interceptors>
+		
 		<action name="userLoginAction" class="UserLoginAction">
 			<result type="json"></result>
 		</action>
@@ -33,17 +37,37 @@
 	</package>
 	
 	<package name="userPackage" extends="struts-default" namespace="/user">
+		<interceptors>
+			<interceptor name="CheckLoginInterceptor" class="com.yueyun.interceptor.CheckLoginInterceptor"></interceptor>
+			<interceptor name="MusicPlayLogInterceptor" class="com.yueyun.interceptor.MusicPlayLogInterceptor"></interceptor>
+		</interceptors>
+	
 		<action name="home" class="UserHomeAction" method="userLoginCheck">
 			<result name="success">/ui/page/user/home.jsp</result>
 			<result name="login" type="redirectAction">
 				<param name="actionName">login</param>
 				<param name="namespace">/user</param>
 			</result>
+			<interceptor-ref name="CheckLoginInterceptor"/>
+            <interceptor-ref name="defaultStack"/>
 		</action>
+		
+		<action name="find" class="UserFindAction">
+			<result name="success">/ui/page/user/find.jsp</result>
+			<result name="login" type="redirectAction">
+				<param name="actionName">login</param>
+				<param name="namespace">/user</param>
+			</result>
+			<interceptor-ref name="CheckLoginInterceptor"/>
+            <interceptor-ref name="defaultStack"/>
+		</action>
+		
 		<action name="play" class="UserPlayAction">
 			<result type="redirectAction">
 				<param name="actionName">musicbox</param>
 			</result>
+			<!-- <interceptor-ref name="MusicPlayLogInterceptor"/>
+            <interceptor-ref name="defaultStack"/> -->
 		</action>
 		<action name="musicbox" class="UserPlayAction">
 			<result>/ui/page/user/play.jsp</result>
