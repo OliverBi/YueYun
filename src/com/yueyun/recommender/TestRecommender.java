@@ -55,11 +55,11 @@ public class TestRecommender {
 		
 		DataModel model = new GenericBooleanPrefDataModel(
 				GenericBooleanPrefDataModel.toDataMap(dataModel));
-		UserSimilarity similarity = new LogLikelihoodSimilarity(dataModel);
+		UserSimilarity similarity = new LogLikelihoodSimilarity(model);
 		
-		UserNeighborhood neighborhood = new NearestNUserNeighborhood(4, similarity, dataModel);
+		UserNeighborhood neighborhood = new NearestNUserNeighborhood(4, similarity, model);
 		
-		Recommender recommender = new GenericUserBasedRecommender(dataModel, neighborhood, similarity);
+		Recommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
         
         List<RecommendedItem> recommendations = recommender.recommend(1, 3);
         

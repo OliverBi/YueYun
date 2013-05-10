@@ -1,3 +1,149 @@
 @charset "utf-8";
 /* CSS Document */
 
+#findPageBack
+{
+	
+}
+
+#findPageContainer
+{
+	min-height:1000px;
+}
+
+#tilesContainer
+{
+	margin-top:50px;
+}
+
+#tiles
+{
+	position:relative;
+	list-style-type:none;
+	margin:0;
+}
+
+#tiles .albumTile,
+#tiles .trackTile
+{
+	width: 210px;
+	background-color: #EFF1F6;
+	border: 1px solid #C5CDE0;
+	border-radius: 2px;
+	display: none; /** Hide items initially to avoid a flicker effect **/
+	cursor: pointer;
+	padding: 8px;
+}
+
+.albumTile .albumImgContainer img
+{
+	width:210px;
+}
+
+.trackTile .trackImgContainer
+{
+	float:left;
+}
+
+.trackTile .trackImgContainer img
+{
+	width:35px;
+	height:35px;
+}
+
+.albumTile .albumTitleContainer,
+.trackTile .trackTitleContainer
+{
+	/*overflow:hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;*/
+	font-size:15px;
+	color:#464646;
+	font-weight:bold;
+	line-height:20px;
+}
+
+.trackTile .trackTitleContainer
+{
+	float:left;
+	line-height:35px;
+	margin-left:10px;
+}
+
+
+.albumTile .albumSocialInfoContainer,
+.trackTile .trackSocialInfoContainer
+{
+	height:16px;
+	line-height:16px;
+	color:#969696;
+	margin-top: 5px;
+}
+
+.albumTile .albumTrackListContainer
+{
+	display:none;
+}
+
+.trackTile .trackListenerListContainer
+{
+	margin-top:5px;
+	display:none;
+}
+
+
+.trackListenerListContainer .listenerItem
+{
+	height:30px;
+	margin:5px 0;
+}
+
+.listenerItem .imgContainer
+{
+	float:left;
+}
+
+.listenerItem .imgContainer img
+{
+	height:30px;
+	width:30px;
+}
+
+.listenerItem .content
+{
+	float:left;
+	line-height:30px;
+	margin-left:5px;
+	color: #646464;
+}
+
+.listenerItem .content .user
+{
+	color: #3E517C;
+}
+
+.albumTrackListContainer .title
+{
+	color:#3E517C;
+	font-size:13px;
+	line-height:30px;
+}
+
+.albumTrackListContainer .trackItem
+{
+	font-size:12px;
+	line-height:25px;
+}
+
+.albumTrackListContainer .trackItem:hover
+{
+	background-color: #DAE6FD;
+}
+
+.albumTrackListContainer .trackItem a,
+.albumTrackListContainer .trackItem a:hover
+{
+	color:#646464;
+	text-decoration:none;
+	margin-left:3px;
+}

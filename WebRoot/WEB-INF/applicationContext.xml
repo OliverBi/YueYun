@@ -139,7 +139,21 @@
 		</property>
 	</bean>
 	<bean id="UserFindAction" class="com.yueyun.action.UserFindAction" scope="prototype">
-		
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbUserService">
+			<ref bean="TbUserService" />
+		</property>
+		<property name="tbFindService">
+			<ref bean="TbFindService" />
+		</property>
 	</bean>
 	<bean id="UserCollectAction" class="com.yueyun.action.UserCollectAction" scope="prototype">
 		<property name="tbCollectService">
@@ -324,6 +338,9 @@
 		</property>
 		<property name="tbAlbumNopreferenceDAO">
 			<ref bean="TbAlbumNopreferenceDAO" />
+		</property>
+		<property name="tbUserService">
+			<ref bean="TbUserService" />
 		</property>
 	</bean>
 	
