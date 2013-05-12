@@ -2,6 +2,9 @@ package com.yueyun.dao;
 
 import java.util.List;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -127,6 +130,14 @@ public class TbArtistDAO extends HibernateDaoSupport {
 			log.error("find all failed", re);
 			throw re;
 		}
+	}
+	
+	public List findByArtistPartName(String artistPartName){
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		List artistList = session.createCriteria(TbArtist.class)
+				.add(Restrictions.like(ARTIST_NAME, artistPartName, MatchMode.ANYWHERE)).list();
+		session.close();
+		return artistList;
 	}
 
 	public TbArtist merge(TbArtist detachedInstance) {

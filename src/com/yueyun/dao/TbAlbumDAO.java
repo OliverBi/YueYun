@@ -3,6 +3,9 @@ package com.yueyun.dao;
 import java.sql.Timestamp;
 import java.util.List;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -129,6 +132,14 @@ public class TbAlbumDAO extends HibernateDaoSupport {
 		}
 	}
 
+	public List findByAlbumPartName(String ablumPartName){
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		List albumList = session.createCriteria(TbAlbum.class)
+				.add(Restrictions.like(ALBUM_NAME, ablumPartName, MatchMode.ANYWHERE)).list();
+		session.close();
+		return albumList;
+	}
+	
 	public TbAlbum merge(TbAlbum detachedInstance) {
 		log.debug("merging TbAlbum instance");
 		try {

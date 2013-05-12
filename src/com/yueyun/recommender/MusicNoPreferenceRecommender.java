@@ -17,7 +17,7 @@ import org.apache.mahout.cf.taste.recommender.Recommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
 public class MusicNoPreferenceRecommender implements Recommender{
-	public static int NEIGHBORHOOD_NUM = 4;
+	public static int NEIGHBORHOOD_NUM = 10;
 
 	private final Recommender recommender;
 	

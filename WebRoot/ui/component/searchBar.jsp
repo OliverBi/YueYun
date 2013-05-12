@@ -11,29 +11,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <link type="text/css" href="ui/css/searchBar.css" rel="stylesheet">
-    <script type="text/javascript">
-    	$(document).ready(function(){
-    		(function(){	
-    			$(".comboxDropdownListContainer").hide();
-    			$(".searchComboxContainer").hover(function(){
-    				$(".comboxDropdownListContainer",this).show();
-    			},function(){
-    				$(".comboxDropdownListContainer",this).hide();
-    			});
-    			
-    			$(".comboxDropdownListContainer .comboxDropdownItem").click(function(){
-    				var parentSearchComboxContainer = $(this).parent().parent();
-    				$(".comboxDisplayValueContainer", parentSearchComboxContainer).html($(this).html());
-    				$(".comboxDropdownListContainer", parentSearchComboxContainer).hide();
-    			});
-    		})();
-    	});
-    </script>
+    <script src="ui/js/searchBar.js" type="text/javascript"></script>
   </head>
   
   <body>
     <div class="searchBarContainer">
-    	<form>
+    	<form action="public/search">
 			<div class="searchComboxContainer">
 				<div class="comboxDisplayValueContainer"><s:text name="track"/></div>
 				<div class="comboxDropdownListContainer">
@@ -47,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<input type="text" name="searchContent" id="searchContent"/>
 			</div>
 			<div class="searchButtonContainer">
-				<input type="button" id="searchButton" value="" />
+				<input type="submit" id="searchButton" value="" />
 			</div>
     	</form>
     </div>

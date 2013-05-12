@@ -17,6 +17,18 @@ public class TbTrackService {
 	private TbAlbumService tbAlbumService;
 	private TbArtistService tbArtistService;
 	
+	public List<Track> searchTrack(String content){
+		List<TbTrack> tbTrackList = tbTrackDAO.findByTrackPartName(content);
+		List<Track> trackList = null;
+		if(tbTrackList.size() > 0){
+			trackList = new ArrayList<Track>();
+			for(TbTrack tbTrack : tbTrackList){
+				trackList.add(getTrackInfo(tbTrack.getTrackId()));
+			}
+		}
+		return trackList;
+	}
+	
 	public List<Track> getOtherTrackList(int trackId){
 		List<Track> otherTrackList = null;
 		TbTrack tbCurrentTrack = tbTrackDAO.findById(trackId);

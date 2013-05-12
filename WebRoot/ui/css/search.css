@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+#searchBack
+{
+	
+}
+
+#searchContainer
+{
+}
+
+#searchResultTitle
+{
+	color: #999999;
+    font-size: 20px;
+    line-height: 22px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+#searchResultContainer
+{
+	min-height: 800px;
+	background-color: #FFFFFF;
+    border: 1px solid #DADADA;
+    border-radius: 5px 5px 5px 5px;
+	margin-bottom:50px;
+}
+
+#searchResultMainContainer
+{
+	border-right: 1px solid #E6E6E6;
+    float: left;
+    width: 674px;
+	min-height: 800px;
+}
+
+#searchResultSideContainer
+{
+	float: right;
+    width: 285px;
+}
+
+#searchResultMainContainer .searchTrackResultTitle,
+#searchResultMainContainer .searchArtistResultTitle,
+#searchResultMainContainer .searchAlbumResultTitle
+{
+	color: #333333;
+    font-size: 28px;
+    line-height: 36px;
+	margin: 10px 0 10px 20px;
+}
+
+.searchTrackResultContainer .trackItem
+{
+	height: 40px;
+	line-height:40px;
+	font-size:16px;
+}
+
+.trackItem .trackImg
+{
+	float:left;
+	margin:3px 0 0 20px;
+}
+
+.trackItem .trackImg img
+{
+	width:30px;
+	height:30px;
+	margin-left:10px;
+}
+
+.trackItem .trackName
+{
+	float:left;
+	width:300px;
+	overflow:hidden;
+	margin-left:20px;
+	color: #0F820C;
+}
+
+.trackItem .trackName a,
+.trackItem .trackName a:hover
+{
+	color: #0F820C;
+	text-decoration:none;
+}
+
+.trackItem .aritstName
+{
+	float:left;
+	font-size:14px;
+}
+
+.trackItem .aritstName a,
+.trackItem .aritstName a:hover
+{
+	text-decoration:none;
+	color: #515151;
+}
+
+.searchAlbumResultContainer .albumItem
+{
+	height: 150px;
+}
+
+.albumItem .albumImg
+{
+	float:left;
+	margin:10px 0 0 20px;
+	border-radius:5px;
+}
+
+.albumItem .albumImg img
+{
+	width:130px;
+	height:130px;
+	border-radius:5px;
+}
+
+.albumItem .albumInfo
+{
+	line-height:24px;
+	color: #515151;
+	font-size:14px;
+	margin: 10px 0 0 20px;
+	float:left;
+}
+
+.albumInfo .albumName a,
+.albumInfo .albumName a:hover
+{
+	color: #0F820C;
+	text-decoration:none;
+	line-height:30px;
+	font-size:18px;
+}
+
+.albumInfo .artistName a,
+.albumInfo .artistName a:hover
+{
+	text-decoration:none;
+	color: #515151;
+	font-size:14px;
+	line-height:20px;
+}
+
+.searchArtistResultContainer .artistItem
+{
+	height: 150px;
+}
+
+.artistItem .artistImg
+{
+	float:left;
+	margin:10px 0 0 20px;
+	border-radius:5px;
+}
+
+.artistItem .artistImg img
+{
+	width:130px;
+	height:130px;
+	border-radius:5px;
+}
+
+.artistItem .artistInfo
+{
+	float:left;
+	margin: 10px 0 0 20px;
+	line-height:24px;
+	color: #515151;
+	font-size:14px;
+}
+
+.artistInfo .artistName
+{
+	font-size:18px;
+}
+
+.artistInfo .artistName a,
+.artistInfo .artistName a:hover
+{
+	color: #FF7B10;
+	text-decoration:none;
+}

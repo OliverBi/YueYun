@@ -3,7 +3,14 @@
 <struts>
 	<constant name="struts.custom.i18n.resources" value="message" />
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
-	<constant name="struts.devMode" value="true"/>
+	<!-- <constant name="struts.devMode" value="true"/> -->
+	
+	<package name="defaultPackage" extends="struts-default">
+		<default-action-ref name="error"/>
+		<action name="error">
+			<result>/ui/page/public/error.jsp</result>
+		</action>
+	</package>
 	
 	<package name="userAjaxPackage" extends="json-default" namespace="/userAjax">
 		<interceptors>
@@ -34,6 +41,7 @@
 		<action name="userFriendAjaxAction" class="UserFriendAjaxAction">
 			<result type="json"></result>
 		</action>
+
 	</package>
 	
 	<package name="userPackage" extends="struts-default" namespace="/user">
@@ -96,6 +104,7 @@
 			<result>/ui/page/user/collect.jsp</result>
 		</action>
 	</package>
+	
 	<package name="publicPackage" extends="struts-default" namespace="/public">
 		<action name="index" class="PublicIndexAction">
 			<result name="success">/ui/page/public/index.jsp</result>
@@ -120,6 +129,9 @@
 				<param name="actionName">index</param>
 				<param name="namespace">/public</param>
 			</result>
+		</action>
+		<action name="search" class="PublicSearchAction">
+			<result>/ui/page/public/search.jsp</result>
 		</action>
 	</package>
 	

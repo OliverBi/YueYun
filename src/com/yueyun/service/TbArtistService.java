@@ -22,6 +22,18 @@ public class TbArtistService {
 	private TbTrackService tbTrackService;
 	private TbAlbumService tbAlbumService;
 	
+	public List<Artist> searchArtist(String content){
+		List<TbArtist> tbArtistList = tbArtistDAO.findByArtistPartName(content);
+		List<Artist> artistList = null;
+		if(tbArtistList.size() > 0){
+			artistList = new ArrayList<Artist>();
+			for(TbArtist tbArtist : tbArtistList){
+				artistList.add(getArtistInfo(tbArtist.getArtistId()));
+			}
+		}
+		return artistList;
+	}
+	
 	public List<Track> getArtistTrackList(int artistId){
 		List<Track> artistTrackList = null;
 		List<TbArtistlist> tbArtistTrackList = tbArtistlistDAO.findByArtistId(artistId);

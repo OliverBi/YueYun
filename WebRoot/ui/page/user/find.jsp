@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  							<span><s:property value="listenerNum"/></span>
 		  						</div>
 		  						<div class="albumTrackListContainer">
-		  							<div class="title">歌曲列表:</div>
+		  							<div class="title"><s:text name="trackList"/>:</div>
 		  							<s:iterator value="albumTrackList" id="track">
 		  								<div class="trackItem">
 			  								<a target="_blank" href="public/track?track.trackId=<s:property value='trackId'/>">
@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  								</div>
 			  								<div class="content">
 			  									<span class="user"><s:property value='userName'/></span>
-			  									<span>听过TA</span>
+			  									<span><s:text name="heardTA"/></span>
 			  								</div>
 			  								<div style="clear:both;"></div>
 			  							</div>

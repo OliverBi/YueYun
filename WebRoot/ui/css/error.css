@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+#errorPageBack
+{
+
+}
+
+#errorPageContainer
+{
+	width: 600px;
+	margin: 60px auto;
+	border: 5px solid #FFF;
+}

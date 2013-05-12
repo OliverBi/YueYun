@@ -170,6 +170,17 @@
 			<ref bean="TbIndexService" />
 		</property>
 	</bean>
+	<bean id="PublicSearchAction" class="com.yueyun.action.PublicSearchAction">
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbArtistService">
+			<ref bean="TbArtistService" />
+		</property>
+	</bean>
 	<bean id="UserPlayAction" class="com.yueyun.action.UserPlayAction" scope="prototype">
 		<property name="tbPlayService">
 			<ref bean="TbPlayService" />
@@ -341,6 +352,17 @@
 		</property>
 		<property name="tbUserService">
 			<ref bean="TbUserService" />
+		</property>
+	</bean>
+	<bean id="TbSearchService" class="com.yueyun.service.TbSearchService">
+		<property name="tbAlbumService">
+			<ref bean="TbAlbumService" />
+		</property>
+		<property name="tbTrackService">
+			<ref bean="TbTrackService" />
+		</property>
+		<property name="tbArtistService">
+			<ref bean="TbArtistService" />
 		</property>
 	</bean>
 	

@@ -1,7 +1,12 @@
 package com.yueyun.dao;
 
 import java.util.List;
+
+import org.hibernate.Criteria;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -126,6 +131,14 @@ public class TbTrackDAO extends HibernateDaoSupport {
 			log.error("find all failed", re);
 			throw re;
 		}
+	}
+	
+	public List findByTrackPartName(String trackPartName){
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		List trackList = session.createCriteria(TbTrack.class)
+				.add(Restrictions.like(TRACK_NAME, trackPartName, MatchMode.ANYWHERE)).list();
+		session.close();
+		return trackList;
 	}
 
 	public TbTrack merge(TbTrack detachedInstance) {

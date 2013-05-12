@@ -71,8 +71,8 @@ public class UserFindAction extends ActionSupport implements SessionAware{
 				findList.add(find);
 			}
 			
-			//Add Test Case
-			Find find = new Find();
+			//Add Test Data
+			/*Find find = new Find();
 			find.setFindType(FindType.FIND_TRACK);
 			find.setTrack(tbTrackService.getTrackInfo(110));
 			find.setListenerNum(tbFindService.getTrackListenerNum(110));
@@ -140,7 +140,7 @@ public class UserFindAction extends ActionSupport implements SessionAware{
 			find.setAlbum(tbAlbumService.getAlbumInfo(20));
 			find.setListenerNum(tbFindService.getAlbumListenerNum(20));
 			find.setAlbumTrackList(tbAlbumService.getAlbumTrackList(20));
-			findList.add(find);
+			findList.add(find);*/
 			
 			Collections.shuffle(findList);
 			
